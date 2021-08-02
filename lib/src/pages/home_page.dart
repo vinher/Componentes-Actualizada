@@ -19,6 +19,7 @@ class HomePage extends StatelessWidget {
     return FutureBuilder(
       future: menuProvider.cargarData(),
       //Es opcional y sirve para que se muestre si no se ha cargado nuestra lista
+      //Initial data para el problema null que tenia 
       //initialData: [],
       builder: (context, AsyncSnapshot<List<dynamic>> snapshot){
         

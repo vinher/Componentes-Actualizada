@@ -22,6 +22,9 @@ class CardPage extends StatelessWidget {
   }
   Widget _cardTipo1(){
     return Card(
+      //Sombra es la propiedad elevation
+      elevation:10.0,
+      shape:RoundedRectangleBorder(borderRadius:BorderRadius.circular(10.0)),
       child: Column(
         children: [
           ListTile(
@@ -49,13 +52,45 @@ class CardPage extends StatelessWidget {
 
   }
   Widget _cardTipo2(){
-    return Card(
+    final card =  Card(
+      clipBehavior: Clip.antiAlias,
       child: Column(
         children: [
-          Image(
-            image:NetworkImage('https://fotoarte.com.uy/wp-content/uploads/2019/03/Landscape-fotoarte.jpg'),
+          //Icono de cargar
+          FadeInImage(
+            image:NetworkImage('https://static.vecteezy.com/system/resources/previews/000/246/312/original/mountain-lake-sunset-landscape-first-person-view-vector.jpg'),
+            placeholder: AssetImage('assets/jar-loading.gif'),
+            fadeInDuration: Duration(milliseconds:200),
+            height:350.0,
+            fit: BoxFit.cover,
+          ),
+
+          Container(
+            padding:EdgeInsets.all(10.0),
+            child:Text('Texto de Prueba')
           )
         ],),
+    );
+    //Container es como si fuera un div de html
+    return Container(
+      
+      decoration:BoxDecoration(
+        borderRadius:BorderRadius.circular(20.0),
+        color:Colors.white,
+      boxShadow: <BoxShadow>[
+        BoxShadow(
+          color: Colors.amber.shade300,
+          blurRadius: 10.0,
+          spreadRadius: 2.0,
+          //Posicion
+          offset:Offset(2.0,10.0) 
+          )
+      ]
+      ),
+      child:ClipRRect(
+        borderRadius:BorderRadius.circular(20.0),
+        child:card
+      ),
     );
   }
 

@@ -10,6 +10,16 @@ class AlertPage extends StatelessWidget{
         centerTitle: true,
         
       ),
+      body:Center(
+        child: ElevatedButton(
+          child:Text('Mostrar Alerta'),
+          onPressed: () => _mostrarAlert(context),
+          style:ElevatedButton.styleFrom(
+            primary: Colors.red,
+            shape:StadiumBorder()
+          )
+        ),
+      ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add_location),
         onPressed: (){
@@ -17,5 +27,41 @@ class AlertPage extends StatelessWidget{
         },
         ),
     );
+
+  }
+
+  void _mostrarAlert(BuildContext context){
+    showDialog(
+      context: context, 
+      barrierDismissible: true,
+      builder: (context){
+        return AlertDialog(
+          //Redondear Bordes
+          shape:RoundedRectangleBorder(borderRadius:BorderRadius.circular(20.0)),
+          title:Text('Titulo'),
+          content:Column(
+            //Tamaño de la caja del dialogo del modal
+            mainAxisSize: MainAxisSize.min,
+            children: [
+            Text('Este es el cotenido de la caja alerta'),
+            FlutterLogo(size:100.0)
+
+          ],),
+          actions: [
+            TextButton(
+              child:Text('Cancelar'),
+              onPressed: ()=>Navigator.of(context).pop(), 
+            ),
+            TextButton(
+              child:Text('Ok'),
+              onPressed: (){
+                Navigator.of(context).pop();
+              }, 
+            )
+
+          ],
+        );
+      },
+      );
   }
 }

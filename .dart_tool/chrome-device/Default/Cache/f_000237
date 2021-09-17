@@ -1,0 +1,458 @@
+define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/painting/edge_insets.dart', 'packages/flutter/src/material/checkbox_list_tile.dart', 'packages/flutter/src/material/slider.dart', 'packages/flutter/src/material/colors.dart', 'packages/flutter/src/painting/_network_image_web.dart', 'packages/flutter/src/painting/box_fit.dart'], (function load__packages__componentes__src__pages__slider_page_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__painting__edge_insets$46dart, packages__flutter__src__material__checkbox_list_tile$46dart, packages__flutter__src__material__slider$46dart, packages__flutter__src__material__colors$46dart, packages__flutter__src__painting___network_image_web$46dart, packages__flutter__src__painting__box_fit$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const _interceptors = dart_sdk._interceptors;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__text;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const container = packages__flutter__src__widgets__widget_span$46dart.src__widgets__container;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const image = packages__flutter__src__widgets__widget_span$46dart.src__widgets__image;
+  const scaffold = packages__flutter__src__material__icon_button$46dart.src__material__scaffold;
+  const app_bar = packages__flutter__src__material__icon_button$46dart.src__material__app_bar;
+  const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
+  const checkbox_list_tile = packages__flutter__src__material__checkbox_list_tile$46dart.src__material__checkbox_list_tile;
+  const slider = packages__flutter__src__material__slider$46dart.src__material__slider;
+  const colors = packages__flutter__src__material__colors$46dart.src__material__colors;
+  const _network_image_web = packages__flutter__src__painting___network_image_web$46dart.src__painting___network_image_web;
+  const box_fit = packages__flutter__src__painting__box_fit$46dart.src__painting__box_fit;
+  var slider_page = Object.create(dart.library);
+  dart._checkModuleNullSafetyMode(true);
+  var T = {
+    JSArrayOfWidget: () => (T.JSArrayOfWidget = dart.constFn(_interceptors.JSArray$(framework.Widget)))(),
+    VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))(),
+    boolN: () => (T.boolN = dart.constFn(dart.nullable(core.bool)))(),
+    boolNTovoid: () => (T.boolNTovoid = dart.constFn(dart.fnType(dart.void, [T.boolN()])))(),
+    doubleTovoid: () => (T.doubleTovoid = dart.constFn(dart.fnType(dart.void, [core.double])))()
+  };
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 20,
+        [_Location_line]: 17,
+        [_Location_file]: null
+      });
+    },
+    get C1() {
+      return C[1] = dart.constList([C[2] || CT.C2], widget_inspector._Location);
+    },
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[1] || CT.C1,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 17,
+        [_Location_file]: "file:///C:/Desarrollo/Flutter/Componentes-Actualizada/lib/src/pages/slider_page.dart"
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 9,
+        [_Location_line]: 17,
+        [_Location_file]: null
+      });
+    },
+    get C4() {
+      return C[4] = dart.constList([C[5] || CT.C5], widget_inspector._Location);
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[4] || CT.C4,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 16,
+        [_Location_file]: "file:///C:/Desarrollo/Flutter/Componentes-Actualizada/lib/src/pages/slider_page.dart"
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 22,
+        [_Location_line]: 25,
+        [_Location_file]: null
+      });
+    },
+    get C7() {
+      return C[7] = dart.constList([C[8] || CT.C8], widget_inspector._Location);
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[7] || CT.C7,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 25,
+        [_Location_file]: "file:///C:/Desarrollo/Flutter/Componentes-Actualizada/lib/src/pages/slider_page.dart"
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 11,
+        [_Location_line]: 22,
+        [_Location_file]: null
+      });
+    },
+    get C10() {
+      return C[10] = dart.constList([C[11] || CT.C11], widget_inspector._Location);
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[10] || CT.C10,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 21,
+        [_Location_file]: "file:///C:/Desarrollo/Flutter/Componentes-Actualizada/lib/src/pages/slider_page.dart"
+      });
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 9,
+        [_Location_line]: 20,
+        [_Location_file]: null
+      });
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 21,
+        [_Location_file]: null
+      });
+    },
+    get C13() {
+      return C[13] = dart.constList([C[14] || CT.C14, C[15] || CT.C15], widget_inspector._Location);
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[13] || CT.C13,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 19,
+        [_Location_file]: "file:///C:/Desarrollo/Flutter/Componentes-Actualizada/lib/src/pages/slider_page.dart"
+      });
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "appBar",
+        [_Location_column]: 7,
+        [_Location_line]: 16,
+        [_Location_file]: null
+      });
+    },
+    get C19() {
+      return C[19] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "body",
+        [_Location_column]: 7,
+        [_Location_line]: 19,
+        [_Location_file]: null
+      });
+    },
+    get C17() {
+      return C[17] = dart.constList([C[18] || CT.C18, C[19] || CT.C19], widget_inspector._Location);
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[17] || CT.C17,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 15,
+        [_Location_file]: "file:///C:/Desarrollo/Flutter/Componentes-Actualizada/lib/src/pages/slider_page.dart"
+      });
+    },
+    get C22() {
+      return C[22] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 17,
+        [_Location_line]: 45,
+        [_Location_file]: null
+      });
+    },
+    get C21() {
+      return C[21] = dart.constList([C[22] || CT.C22], widget_inspector._Location);
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[21] || CT.C21,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 45,
+        [_Location_file]: "file:///C:/Desarrollo/Flutter/Componentes-Actualizada/lib/src/pages/slider_page.dart"
+      });
+    },
+    get C25() {
+      return C[25] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 5,
+        [_Location_line]: 45,
+        [_Location_file]: null
+      });
+    },
+    get C26() {
+      return C[26] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "value",
+        [_Location_column]: 5,
+        [_Location_line]: 46,
+        [_Location_file]: null
+      });
+    },
+    get C27() {
+      return C[27] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onChanged",
+        [_Location_column]: 5,
+        [_Location_line]: 47,
+        [_Location_file]: null
+      });
+    },
+    get C24() {
+      return C[24] = dart.constList([C[25] || CT.C25, C[26] || CT.C26, C[27] || CT.C27], widget_inspector._Location);
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[24] || CT.C24,
+        [_Location_name]: null,
+        [_Location_column]: 10,
+        [_Location_line]: 44,
+        [_Location_file]: "file:///C:/Desarrollo/Flutter/Componentes-Actualizada/lib/src/pages/slider_page.dart"
+      });
+    },
+    get C30() {
+      return C[30] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "activeColor",
+        [_Location_column]: 5,
+        [_Location_line]: 56,
+        [_Location_file]: null
+      });
+    },
+    get C31() {
+      return C[31] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "label",
+        [_Location_column]: 5,
+        [_Location_line]: 57,
+        [_Location_file]: null
+      });
+    },
+    get C32() {
+      return C[32] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "value",
+        [_Location_column]: 5,
+        [_Location_line]: 58,
+        [_Location_file]: null
+      });
+    },
+    get C33() {
+      return C[33] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "min",
+        [_Location_column]: 5,
+        [_Location_line]: 61,
+        [_Location_file]: null
+      });
+    },
+    get C34() {
+      return C[34] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "max",
+        [_Location_column]: 5,
+        [_Location_line]: 62,
+        [_Location_file]: null
+      });
+    },
+    get C35() {
+      return C[35] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onChanged",
+        [_Location_column]: 5,
+        [_Location_line]: 63,
+        [_Location_file]: null
+      });
+    },
+    get C29() {
+      return C[29] = dart.constList([C[30] || CT.C30, C[31] || CT.C31, C[32] || CT.C32, C[33] || CT.C33, C[34] || CT.C34, C[35] || CT.C35], widget_inspector._Location);
+    },
+    get C28() {
+      return C[28] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[29] || CT.C29,
+        [_Location_name]: null,
+        [_Location_column]: 10,
+        [_Location_line]: 55,
+        [_Location_file]: "file:///C:/Desarrollo/Flutter/Componentes-Actualizada/lib/src/pages/slider_page.dart"
+      });
+    },
+    get C38() {
+      return C[38] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "image",
+        [_Location_column]: 7,
+        [_Location_line]: 73,
+        [_Location_file]: null
+      });
+    },
+    get C39() {
+      return C[39] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 7,
+        [_Location_line]: 74,
+        [_Location_file]: null
+      });
+    },
+    get C40() {
+      return C[40] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "fit",
+        [_Location_column]: 7,
+        [_Location_line]: 75,
+        [_Location_file]: null
+      });
+    },
+    get C37() {
+      return C[37] = dart.constList([C[38] || CT.C38, C[39] || CT.C39, C[40] || CT.C40], widget_inspector._Location);
+    },
+    get C36() {
+      return C[36] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[37] || CT.C37,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 72,
+        [_Location_file]: "file:///C:/Desarrollo/Flutter/Componentes-Actualizada/lib/src/pages/slider_page.dart"
+      });
+    }
+  }, false);
+  var C = Array(41).fill(void 0);
+  var I = ["package:componentes/src/pages/slider_page.dart"];
+  slider_page.SliderPage = class SliderPage extends framework.StatefulWidget {
+    createState() {
+      return new slider_page._SliderPageState.new();
+    }
+  };
+  (slider_page.SliderPage.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    slider_page.SliderPage.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = slider_page.SliderPage.prototype;
+  dart.addTypeTests(slider_page.SliderPage);
+  dart.addTypeCaches(slider_page.SliderPage);
+  dart.setMethodSignature(slider_page.SliderPage, () => ({
+    __proto__: dart.getMethods(slider_page.SliderPage.__proto__),
+    createState: dart.fnType(slider_page._SliderPageState, [])
+  }));
+  dart.setLibraryUri(slider_page.SliderPage, I[0]);
+  var _valorSlider = dart.privateName(slider_page, "_valorSlider");
+  var _bloquearCheck = dart.privateName(slider_page, "_bloquearCheck");
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  var _crearSlider = dart.privateName(slider_page, "_crearSlider");
+  var _checkBox = dart.privateName(slider_page, "_checkBox");
+  var _crearImagen = dart.privateName(slider_page, "_crearImagen");
+  slider_page._SliderPageState = class _SliderPageState extends framework.State$(slider_page.SliderPage) {
+    build(context) {
+      return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({title: new text.Text.new("Sliders", {$creationLocationd_0dea112b090073317d4: C[0] || CT.C0}), $creationLocationd_0dea112b090073317d4: C[3] || CT.C3}), body: new container.Container.new({padding: new edge_insets.EdgeInsets.only({top: 50.0}), child: new basic.Column.new({children: T.JSArrayOfWidget().of([this[_crearSlider](), this[_checkBox](), new basic.Expanded.new({child: this[_crearImagen](), $creationLocationd_0dea112b090073317d4: C[6] || CT.C6})]), $creationLocationd_0dea112b090073317d4: C[9] || CT.C9}), $creationLocationd_0dea112b090073317d4: C[12] || CT.C12}), $creationLocationd_0dea112b090073317d4: C[16] || CT.C16});
+    }
+    [_checkBox]() {
+      return new checkbox_list_tile.CheckboxListTile.new({title: new text.Text.new("Bloquear Texto", {$creationLocationd_0dea112b090073317d4: C[20] || CT.C20}), value: this[_bloquearCheck], onChanged: dart.fn(valor => {
+          this.setState(dart.fn(() => {
+            this[_bloquearCheck] = this[_bloquearCheck];
+          }, T.VoidTovoid()));
+        }, T.boolNTovoid()), $creationLocationd_0dea112b090073317d4: C[23] || CT.C23});
+    }
+    [_crearSlider]() {
+      return new slider.Slider.new({activeColor: colors.Colors.indigoAccent, label: "Tamaño De La Imagen", value: this[_valorSlider], min: 10.0, max: 100.0, onChanged: dart.fn(valor => {
+          this.setState(dart.fn(() => {
+            this[_valorSlider] = valor;
+          }, T.VoidTovoid()));
+        }, T.doubleTovoid()), $creationLocationd_0dea112b090073317d4: C[28] || CT.C28});
+    }
+    [_crearImagen]() {
+      return new image.Image.new({image: new _network_image_web.NetworkImage.new("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpngimg.com%2Fuploads%2Fbatman%2Fbatman_PNG34.png&f=1&nofb=1"), width: this[_valorSlider], fit: box_fit.BoxFit.contain, $creationLocationd_0dea112b090073317d4: C[36] || CT.C36});
+    }
+  };
+  (slider_page._SliderPageState.new = function() {
+    this[_valorSlider] = 100.0;
+    this[_bloquearCheck] = false;
+    slider_page._SliderPageState.__proto__.new.call(this);
+    ;
+  }).prototype = slider_page._SliderPageState.prototype;
+  dart.addTypeTests(slider_page._SliderPageState);
+  dart.addTypeCaches(slider_page._SliderPageState);
+  dart.setMethodSignature(slider_page._SliderPageState, () => ({
+    __proto__: dart.getMethods(slider_page._SliderPageState.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext]),
+    [_checkBox]: dart.fnType(framework.Widget, []),
+    [_crearSlider]: dart.fnType(framework.Widget, []),
+    [_crearImagen]: dart.fnType(framework.Widget, [])
+  }));
+  dart.setLibraryUri(slider_page._SliderPageState, I[0]);
+  dart.setFieldSignature(slider_page._SliderPageState, () => ({
+    __proto__: dart.getFields(slider_page._SliderPageState.__proto__),
+    [_valorSlider]: dart.fieldType(core.double),
+    [_bloquearCheck]: dart.fieldType(core.bool)
+  }));
+  dart.trackLibraries("packages/componentes/src/pages/slider_page.dart", {
+    "package:componentes/src/pages/slider_page.dart": slider_page
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["slider_page.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAKoC;IAAkB;;;QAHnC;;AAAQ,0DAAW,GAAG;;EAAC;;;;;;;;;;;;;;;;;;;UAWd;AACxB,YAAO,oCACG,+BACA,kBAAK,oIAER,sCACiB,sCAAS,eACtB,gCACI,wBACP,sBACA,mBACA,+BAAgB;IAM1B;;AAaA,YAAO,qDACE,kBAAK,qFACL,iCACI,QAAC;AAGR,UAFF,cAAS;AACwB,YAA/B,uBAAiB;;;IAGzB;;AAGE,YAAO,qCACc,mCACb,8BACA,yBAGF,WACA,kBACM,QAAC;AAGP,UAFF,cAAS;AACW,YAAlB,qBAAa,KAAK;;;IAK1B;;AAEI,YAAO,6BACC,wCAAa,mIACZ,yBACI;IAEf;;;IAnEO,qBAAe;IACjB,uBAAiB;;;EAmExB","file":"../../../../../../packages/componentes/src/pages/slider_page.dart.lib.js"}');
+  // Exports:
+  return {
+    src__pages__slider_page: slider_page
+  };
+}));
+
+//# sourceMappingURL=slider_page.dart.lib.js.map

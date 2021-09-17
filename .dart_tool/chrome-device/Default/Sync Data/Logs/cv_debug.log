@@ -43,3 +43,13 @@
 {"logTime":"0903/180349", "correlationVector":"dh1CViYa6KYQXMa5DeqL7Q","action":"Poll GetUpdate request", "result":""}
 {"logTime":"0903/180349", "correlationVector":"dh1CViYa6KYQXMa5DeqL7Q.1","action":"SyncServerConnectionManagerRequest", "result":"SYNC_SERVER_OK", "context":{"environment":"48F630A6-CB1B-4CC7-86AF-0F6627234B58", "server":"BN3PEPF00000886"}}
 {"logTime":"0903/180349", "correlationVector":"dh1CViYa6KYQXMa5DeqL7Q.2","action":"GetUpdates Response", "result":"SYNCER_OK"}
+{"logTime": "0917/202038", "correlationVector":"DS/mjD8698ibvkca2A7qR5.0","action":"FeedSettingFetch_homeCloud", "result":"0", "context":{}}
+{"logTime": "0917/202038", "correlationVector":"cIeaB3xUHHc5Tzz/JlCxRE.1","action":"SyncServerConnectionManagerRequest", "result":"SYNC_SERVER_OK", "context":{"environment":"48F630A6-CB1B-4CC7-86AF-0F6627234B58", "server":"BN3PEPF0000088F"}}
+{"logTime": "0917/202039", "correlationVector":"pQeOJfDQhtjvNhddceFm3R.1","action":"SyncServerConnectionManagerRequest", "result":"SYNC_SERVER_OK", "context":{"environment":"48F630A6-CB1B-4CC7-86AF-0F6627234B58", "server":"BN3PEPF0000088F"}}
+{"logTime": "0917/202039", "correlationVector":"cIeaB3xUHHc5Tzz/JlCxRE","action":"Initial GetUpdates", "result":""}
+{"logTime": "0917/202039", "correlationVector":"cIeaB3xUHHc5Tzz/JlCxRE.2","action":"GetUpdates Response", "result":"SERVER_MORE_TO_DOWNLOAD"}
+{"logTime": "0917/202039", "correlationVector":"pQeOJfDQhtjvNhddceFm3R","action":"Initial GetUpdates", "result":""}
+{"logTime": "0917/202039", "correlationVector":"pQeOJfDQhtjvNhddceFm3R.2","action":"GetUpdates Response", "result":"SYNCER_OK"}
+{"logTime": "0917/202039", "correlationVector":"KMpDG/Xx+ZOf36tzpHJy1z","action":"Normal GetUpdate request", "result":""}
+{"logTime": "0917/202039", "correlationVector":"KMpDG/Xx+ZOf36tzpHJy1z.1","action":"SyncServerConnectionManagerRequest", "result":"SYNC_SERVER_OK", "context":{"environment":"48F630A6-CB1B-4CC7-86AF-0F6627234B58", "server":"BN3PEPF0000088F"}}
+{"logTime": "0917/202039", "correlationVector":"KMpDG/Xx+ZOf36tzpHJy1z.2","action":"GetUpdates Response", "result":"SYNCER_OK"}

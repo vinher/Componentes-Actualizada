@@ -1,56 +1,106 @@
 import 'package:flutter/material.dart';
-class SliderPage extends StatefulWidget {
-  SliderPage({Key? key}) : super(key: key);
 
+
+class SliderPage extends StatefulWidget {
   @override
   _SliderPageState createState() => _SliderPageState();
 }
 
 class _SliderPageState extends State<SliderPage> {
-  double _valorSlider = 100.0;
 
+  double _valorSlider = 100.0;
+  bool _bloquearCheck = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:Text('Sliders'),
+        title: Text('Slider'),
       ),
-      body:Container(
-        padding: EdgeInsets.only(top:50), 
+      body: Container(
+        padding: EdgeInsets.only(top: 50.0),
         child: Column(
-          children:[
+          children: <Widget>[
             _crearSlider(),
-            Expanded(child: _crearImagen())
-          ]
-        )
-        
-        )
+            _checkBox(),
+            _crearSwitch(),
+            Expanded(
+              child: _crearImagen()
+            ),
+          ],
+        ),
+      ),
     );
   }
 
-Widget _crearSlider() {
-  return Slider(
-    activeColor:Colors.indigoAccent,
-    label:'Tamaño De La Imagen',
-    value:_valorSlider,
-    //Se puede agrgar como puntos al slider
-    //divisions:20,
-    min:10,
-    max:100,
-    onChanged:(valor){
-      setState((){
-        _valorSlider=valor;
-      });
-      
-    }
-  );
-}
-  Widget _crearImagen() {
-    return Image(
-      image:NetworkImage('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpngimg.com%2Fuploads%2Fbatman%2Fbatman_PNG34.png&f=1&nofb=1'),
-      width: _valorSlider,
-      fit:BoxFit.contain,
+
+  Widget _crearSlider() {
+
+    return Slider(
+      activeColor: Colors.indigoAccent,
+      label: 'Tamaño de la imagen',
+      // divisions: 20,
+      value: _valorSlider,
+      min: 10.0,
+      max: 400.0,
+      onChanged: ( _bloquearCheck ) ? null : ( valor ){
+
+        setState(() {
+          _valorSlider = valor;
+        });
+
+      },
+    );
+
+  }
+
+  Widget _checkBox() {
+
+    // return Checkbox(
+    //   value: _bloquearCheck,
+    //   onChanged: (valor){ 
+    //     setState(() {
+    //       _bloquearCheck = valor;
+    //     });
+    //   },
+    // );
+
+    return CheckboxListTile(
+      title: Text('Bloquear slider'),
+      value: _bloquearCheck,
+      onChanged: (valor){ 
+        setState(() {
+          _bloquearCheck = valor;
+        });
+      },
+
+    );
+
+
+  }
+
+  Widget _crearSwitch() {
+    return SwitchListTile(
+      title: Text('Bloquear slider'),
+      value: _bloquearCheck,
+      onChanged: (valor){ 
+        setState(() {
+          _bloquearCheck = valor;
+        });
+      },
+
     );
   }
+
+
+  Widget _crearImagen() {
+
+    return Image(
+      image: NetworkImage('http://pngimg.com/uploads/batman/batman_PNG111.png'),
+      width: _valorSlider,
+      fit: BoxFit.contain,
+    );
+
+  }
+
 }

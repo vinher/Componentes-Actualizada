@@ -1,611 +1,504 @@
-define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/foundation/object.dart'], (function load__packages__flutter__src__widgets__async_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__foundation__object$46dart) {
+define(['dart_sdk', 'packages/flutter/src/painting/borders.dart', 'packages/flutter/src/painting/edge_insets.dart', 'packages/flutter/src/painting/border_radius.dart'], (function load__packages__flutter__src__material__input_border_dart(dart_sdk, packages__flutter__src__painting__borders$46dart, packages__flutter__src__painting__edge_insets$46dart, packages__flutter__src__painting__border_radius$46dart) {
   'use strict';
   const core = dart_sdk.core;
-  const async = dart_sdk.async;
-  const _internal = dart_sdk._internal;
   const ui = dart_sdk.ui;
+  const math = dart_sdk.math;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
-  const object = packages__flutter__src__foundation__object$46dart.src__foundation__object;
-  var async$ = Object.create(dart.library);
+  const borders = packages__flutter__src__painting__borders$46dart.src__painting__borders;
+  const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
+  const border_radius = packages__flutter__src__painting__border_radius$46dart.src__painting__border_radius;
+  var input_border = Object.create(dart.library);
+  var $runtimeType = dartx.runtimeType;
+  var $clamp = dartx.clamp;
   dart._checkModuleNullSafetyMode(true);
-  var T$ = {
-    VoidTovoid: () => (T$.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))(),
-    ObjectAndStackTraceToNull: () => (T$.ObjectAndStackTraceToNull = dart.constFn(dart.fnType(core.Null, [core.Object, core.StackTrace])))()
-  };
   const CT = Object.create({
     _: () => (C, CT)
   });
   dart.defineLazy(CT, {
-    get C0() {
-      return C[0] = dart.const({
-        __proto__: async$.ConnectionState.prototype,
-        [_name$]: "ConnectionState.none",
-        index: 0
-      });
-    },
     get C1() {
       return C[1] = dart.const({
-        __proto__: async$.ConnectionState.prototype,
-        [_name$]: "ConnectionState.waiting",
-        index: 1
+        __proto__: borders.BorderStyle.prototype,
+        [_name]: "BorderStyle.none",
+        index: 0
       });
     },
     get C2() {
       return C[2] = dart.const({
-        __proto__: async$.ConnectionState.prototype,
-        [_name$]: "ConnectionState.active",
-        index: 2
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4278190080.0
+      });
+    },
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: borders.BorderSide.prototype,
+        [BorderSide_style]: C[1] || CT.C1,
+        [BorderSide_width]: 0,
+        [BorderSide_color]: C[2] || CT.C2
       });
     },
     get C3() {
       return C[3] = dart.const({
-        __proto__: async$.ConnectionState.prototype,
-        [_name$]: "ConnectionState.done",
-        index: 3
+        __proto__: input_border._NoInputBorder.prototype,
+        [borderSide$]: C[0] || CT.C0
       });
-    },
-    get C4() {
-      return C[4] = dart.constList([C[0] || CT.C0, C[1] || CT.C1, C[2] || CT.C2, C[3] || CT.C3], async$.ConnectionState);
     },
     get C5() {
       return C[5] = dart.const({
-        __proto__: core._StringStackTrace.prototype,
-        [_StringStackTrace__stackTrace]: ""
+        __proto__: borders.BorderStyle.prototype,
+        [_name]: "BorderStyle.solid",
+        index: 1
+      });
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: borders.BorderSide.prototype,
+        [BorderSide_style]: C[5] || CT.C5,
+        [BorderSide_width]: 1,
+        [BorderSide_color]: C[2] || CT.C2
+      });
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: ui.Radius.prototype,
+        [Radius_y]: 0,
+        [Radius_x]: 0
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: ui.Radius.prototype,
+        [Radius_y]: 4,
+        [Radius_x]: 4
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: border_radius.BorderRadius.prototype,
+        [BorderRadius_bottomRight]: C[7] || CT.C7,
+        [BorderRadius_bottomLeft]: C[7] || CT.C7,
+        [BorderRadius_topRight]: C[8] || CT.C8,
+        [BorderRadius_topLeft]: C[8] || CT.C8
+      });
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: border_radius.BorderRadius.prototype,
+        [BorderRadius_bottomRight]: C[8] || CT.C8,
+        [BorderRadius_bottomLeft]: C[8] || CT.C8,
+        [BorderRadius_topRight]: C[8] || CT.C8,
+        [BorderRadius_topLeft]: C[8] || CT.C8
+      });
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: ui.TextDirection.prototype,
+        [_name$]: "TextDirection.rtl",
+        index: 0
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: ui.TextDirection.prototype,
+        [_name$]: "TextDirection.ltr",
+        index: 1
       });
     }
   }, false);
-  var C = Array(6).fill(void 0);
+  var C = Array(12).fill(void 0);
   var I = [
-    "package:flutter/src/widgets/async.dart",
-    "file:///C:/src/flutter/packages/flutter/lib/src/widgets/async.dart"
+    "file:///C:/src/flutter/packages/flutter/lib/src/material/input_border.dart",
+    "package:flutter/src/material/input_border.dart"
   ];
-  var stream$ = dart.privateName(async$, "StreamBuilderBase.stream");
-  const _is_StreamBuilderBase_default = Symbol('_is_StreamBuilderBase_default');
-  async$.StreamBuilderBase$ = dart.generic((T, S) => {
-    var _StreamBuilderBaseStateOfT$S = () => (_StreamBuilderBaseStateOfT$S = dart.constFn(async$._StreamBuilderBaseState$(T, S)))();
-    class StreamBuilderBase extends framework.StatefulWidget {
-      get stream() {
-        return this[stream$];
-      }
-      set stream(value) {
-        super.stream = value;
-      }
-      afterConnected(current) {
-        S.as(current);
-        return current;
-      }
-      afterError(current, error, stackTrace) {
-        S.as(current);
-        return current;
-      }
-      afterDone(current) {
-        S.as(current);
-        return current;
-      }
-      afterDisconnected(current) {
-        S.as(current);
-        return current;
-      }
-      createState() {
-        return new (_StreamBuilderBaseStateOfT$S()).new();
-      }
+  var borderSide$ = dart.privateName(input_border, "InputBorder.borderSide");
+  var _name = dart.privateName(borders, "_name");
+  var BorderSide_style = dart.privateName(borders, "BorderSide.style");
+  var BorderSide_width = dart.privateName(borders, "BorderSide.width");
+  var Color_value = dart.privateName(ui, "Color.value");
+  var BorderSide_color = dart.privateName(borders, "BorderSide.color");
+  input_border.InputBorder = class InputBorder extends borders.ShapeBorder {
+    get borderSide() {
+      return this[borderSide$];
     }
-    (StreamBuilderBase.new = function(opts) {
-      let key = opts && 'key' in opts ? opts.key : null;
-      let stream = opts && 'stream' in opts ? opts.stream : null;
-      let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-      this[stream$] = stream;
-      StreamBuilderBase.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
-      ;
-    }).prototype = StreamBuilderBase.prototype;
-    dart.addTypeTests(StreamBuilderBase);
-    StreamBuilderBase.prototype[_is_StreamBuilderBase_default] = true;
-    dart.addTypeCaches(StreamBuilderBase);
-    dart.setMethodSignature(StreamBuilderBase, () => ({
-      __proto__: dart.getMethods(StreamBuilderBase.__proto__),
-      afterConnected: dart.fnType(S, [dart.nullable(core.Object)]),
-      afterError: dart.fnType(S, [dart.nullable(core.Object), core.Object, core.StackTrace]),
-      afterDone: dart.fnType(S, [dart.nullable(core.Object)]),
-      afterDisconnected: dart.fnType(S, [dart.nullable(core.Object)]),
-      createState: dart.fnType(framework.State$(async$.StreamBuilderBase$(T, S)), [])
-    }));
-    dart.setLibraryUri(StreamBuilderBase, I[0]);
-    dart.setFieldSignature(StreamBuilderBase, () => ({
-      __proto__: dart.getFields(StreamBuilderBase.__proto__),
-      stream: dart.finalFieldType(dart.nullable(async.Stream$(T)))
-    }));
-    return StreamBuilderBase;
-  });
-  async$.StreamBuilderBase = async$.StreamBuilderBase$();
-  dart.addTypeTests(async$.StreamBuilderBase, _is_StreamBuilderBase_default);
-  var _subscription = dart.privateName(async$, "_subscription");
-  var ___StreamBuilderBaseState__summary = dart.privateName(async$, "_#_StreamBuilderBaseState#_summary");
-  var ___StreamBuilderBaseState__summary_isSet = dart.privateName(async$, "_#_StreamBuilderBaseState#_summary#isSet");
-  var _summary = dart.privateName(async$, "_summary");
-  var _subscribe = dart.privateName(async$, "_subscribe");
-  var _unsubscribe = dart.privateName(async$, "_unsubscribe");
-  const _is__StreamBuilderBaseState_default = Symbol('_is__StreamBuilderBaseState_default');
-  async$._StreamBuilderBaseState$ = dart.generic((T, S) => {
-    var StreamBuilderBaseOfT$S = () => (StreamBuilderBaseOfT$S = dart.constFn(async$.StreamBuilderBase$(T, S)))();
-    var TTovoid = () => (TTovoid = dart.constFn(dart.fnType(dart.void, [T])))();
-    class _StreamBuilderBaseState extends framework.State$(async$.StreamBuilderBase$(T, S)) {
-      get [_summary]() {
-        let t0;
-        return this[___StreamBuilderBaseState__summary_isSet] ? (t0 = this[___StreamBuilderBaseState__summary], t0) : dart.throw(new _internal.LateError.fieldNI("_summary"));
-      }
-      set [_summary](t0) {
-        this[___StreamBuilderBaseState__summary_isSet] = true;
-        this[___StreamBuilderBaseState__summary] = t0;
-      }
-      initState() {
-        super.initState();
-        this[_summary] = this.widget.initial();
-        this[_subscribe]();
-      }
-      didUpdateWidget(oldWidget) {
-        StreamBuilderBaseOfT$S().as(oldWidget);
-        super.didUpdateWidget(oldWidget);
-        if (!dart.equals(oldWidget.stream, this.widget.stream)) {
-          if (this[_subscription] != null) {
-            this[_unsubscribe]();
-            this[_summary] = this.widget.afterDisconnected(this[_summary]);
-          }
-          this[_subscribe]();
-        }
-      }
-      build(context) {
-        return this.widget.build(context, this[_summary]);
-      }
-      dispose() {
-        this[_unsubscribe]();
-        super.dispose();
-      }
-      [_subscribe]() {
-        if (this.widget.stream != null) {
-          this[_subscription] = dart.nullCheck(this.widget.stream).listen(dart.fn(data => {
-            this.setState(dart.fn(() => {
-              this[_summary] = this.widget.afterData(this[_summary], data);
-            }, T$.VoidTovoid()));
-          }, TTovoid()), {onError: dart.fn((error, stackTrace) => {
-              this.setState(dart.fn(() => {
-                this[_summary] = this.widget.afterError(this[_summary], error, stackTrace);
-              }, T$.VoidTovoid()));
-            }, T$.ObjectAndStackTraceToNull()), onDone: dart.fn(() => {
-              this.setState(dart.fn(() => {
-                this[_summary] = this.widget.afterDone(this[_summary]);
-              }, T$.VoidTovoid()));
-            }, T$.VoidTovoid())});
-          this[_summary] = this.widget.afterConnected(this[_summary]);
-        }
-      }
-      [_unsubscribe]() {
-        if (this[_subscription] != null) {
-          dart.nullCheck(this[_subscription]).cancel();
-          this[_subscription] = null;
-        }
-      }
-    }
-    (_StreamBuilderBaseState.new = function() {
-      this[_subscription] = null;
-      this[___StreamBuilderBaseState__summary] = null;
-      this[___StreamBuilderBaseState__summary_isSet] = false;
-      _StreamBuilderBaseState.__proto__.new.call(this);
-      ;
-    }).prototype = _StreamBuilderBaseState.prototype;
-    dart.addTypeTests(_StreamBuilderBaseState);
-    _StreamBuilderBaseState.prototype[_is__StreamBuilderBaseState_default] = true;
-    dart.addTypeCaches(_StreamBuilderBaseState);
-    dart.setMethodSignature(_StreamBuilderBaseState, () => ({
-      __proto__: dart.getMethods(_StreamBuilderBaseState.__proto__),
-      build: dart.fnType(framework.Widget, [framework.BuildContext]),
-      [_subscribe]: dart.fnType(dart.void, []),
-      [_unsubscribe]: dart.fnType(dart.void, [])
-    }));
-    dart.setGetterSignature(_StreamBuilderBaseState, () => ({
-      __proto__: dart.getGetters(_StreamBuilderBaseState.__proto__),
-      [_summary]: S
-    }));
-    dart.setSetterSignature(_StreamBuilderBaseState, () => ({
-      __proto__: dart.getSetters(_StreamBuilderBaseState.__proto__),
-      [_summary]: S
-    }));
-    dart.setLibraryUri(_StreamBuilderBaseState, I[0]);
-    dart.setFieldSignature(_StreamBuilderBaseState, () => ({
-      __proto__: dart.getFields(_StreamBuilderBaseState.__proto__),
-      [_subscription]: dart.fieldType(dart.nullable(async.StreamSubscription$(T))),
-      [___StreamBuilderBaseState__summary]: dart.fieldType(dart.nullable(S)),
-      [___StreamBuilderBaseState__summary_isSet]: dart.fieldType(core.bool)
-    }));
-    return _StreamBuilderBaseState;
-  });
-  async$._StreamBuilderBaseState = async$._StreamBuilderBaseState$();
-  dart.addTypeTests(async$._StreamBuilderBaseState, _is__StreamBuilderBaseState_default);
-  var _name$ = dart.privateName(async$, "_name");
-  async$.ConnectionState = class ConnectionState extends core.Object {
-    toString() {
-      return this[_name$];
+    set borderSide(value) {
+      super.borderSide = value;
     }
   };
-  (async$.ConnectionState.new = function(index, _name) {
-    this.index = index;
-    this[_name$] = _name;
+  (input_border.InputBorder.new = function(opts) {
+    let borderSide = opts && 'borderSide' in opts ? opts.borderSide : C[0] || CT.C0;
+    this[borderSide$] = borderSide;
+    if (!(borderSide !== null)) dart.assertFailed(null, I[0], 39, 15, "borderSide != null");
+    input_border.InputBorder.__proto__.new.call(this);
     ;
-  }).prototype = async$.ConnectionState.prototype;
-  dart.addTypeTests(async$.ConnectionState);
-  dart.addTypeCaches(async$.ConnectionState);
-  dart.setLibraryUri(async$.ConnectionState, I[0]);
-  dart.setFieldSignature(async$.ConnectionState, () => ({
-    __proto__: dart.getFields(async$.ConnectionState.__proto__),
-    index: dart.finalFieldType(core.int),
-    [_name$]: dart.finalFieldType(core.String)
+  }).prototype = input_border.InputBorder.prototype;
+  dart.addTypeTests(input_border.InputBorder);
+  dart.addTypeCaches(input_border.InputBorder);
+  dart.setLibraryUri(input_border.InputBorder, I[1]);
+  dart.setFieldSignature(input_border.InputBorder, () => ({
+    __proto__: dart.getFields(input_border.InputBorder.__proto__),
+    borderSide: dart.finalFieldType(borders.BorderSide)
   }));
-  dart.defineExtensionMethods(async$.ConnectionState, ['toString']);
-  async$.ConnectionState.none = C[0] || CT.C0;
-  async$.ConnectionState.waiting = C[1] || CT.C1;
-  async$.ConnectionState.active = C[2] || CT.C2;
-  async$.ConnectionState.done = C[3] || CT.C3;
-  async$.ConnectionState.values = C[4] || CT.C4;
-  var connectionState$ = dart.privateName(async$, "AsyncSnapshot.connectionState");
-  var data$ = dart.privateName(async$, "AsyncSnapshot.data");
-  var error$ = dart.privateName(async$, "AsyncSnapshot.error");
-  var stackTrace$ = dart.privateName(async$, "AsyncSnapshot.stackTrace");
-  var _StringStackTrace__stackTrace = dart.privateName(core, "_StringStackTrace._stackTrace");
-  const _is_AsyncSnapshot_default = Symbol('_is_AsyncSnapshot_default');
-  async$.AsyncSnapshot$ = dart.generic(T => {
-    var AsyncSnapshotOfT = () => (AsyncSnapshotOfT = dart.constFn(async$.AsyncSnapshot$(T)))();
-    class AsyncSnapshot extends core.Object {
-      get connectionState() {
-        return this[connectionState$];
-      }
-      set connectionState(value) {
-        super.connectionState = value;
-      }
-      get data() {
-        return this[data$];
-      }
-      set data(value) {
-        super.data = value;
-      }
-      get error() {
-        return this[error$];
-      }
-      set error(value) {
-        super.error = value;
-      }
-      get stackTrace() {
-        return this[stackTrace$];
-      }
-      set stackTrace(value) {
-        super.stackTrace = value;
-      }
-      get requireData() {
-        if (this.hasData) return dart.nullCheck(this.data);
-        if (this.hasError) dart.throw(dart.nullCheck(this.error));
-        dart.throw(new core.StateError.new("Snapshot has neither data nor error"));
-      }
-      inState(state) {
-        return new (AsyncSnapshotOfT()).__(state, this.data, this.error, this.stackTrace);
-      }
-      get hasData() {
-        return this.data != null;
-      }
-      get hasError() {
-        return this.error != null;
-      }
-      toString() {
-        return object.objectRuntimeType(this, "AsyncSnapshot") + "(" + dart.str(this.connectionState) + ", " + dart.str(this.data) + ", " + dart.str(this.error) + ", " + dart.str(this.stackTrace) + ")";
-      }
-      _equals(other) {
-        if (other == null) return false;
-        if (this === other) return true;
-        return AsyncSnapshotOfT().is(other) && other.connectionState === this.connectionState && dart.equals(other.data, this.data) && dart.equals(other.error, this.error) && dart.equals(other.stackTrace, this.stackTrace);
-      }
-      get hashCode() {
-        return ui.hashValues(this.connectionState, this.data, this.error);
-      }
+  dart.defineLazy(input_border.InputBorder, {
+    /*input_border.InputBorder.none*/get none() {
+      return C[3] || CT.C3;
     }
-    (AsyncSnapshot.__ = function(connectionState, data, error, stackTrace) {
-      this[connectionState$] = connectionState;
-      this[data$] = data;
-      this[error$] = error;
-      this[stackTrace$] = stackTrace;
-      if (!(connectionState !== null)) dart.assertFailed(null, I[1], 207, 14, "connectionState != null");
-      if (!!(data != null && error != null)) dart.assertFailed(null, I[1], 208, 14, "!(data != null && error != null)");
-      if (!(stackTrace == null || error != null)) dart.assertFailed(null, I[1], 209, 14, "stackTrace == null || error != null");
-      ;
-    }).prototype = AsyncSnapshot.prototype;
-    (AsyncSnapshot.nothing = function() {
-      AsyncSnapshot.__.call(this, async$.ConnectionState.none, null, null, null);
-    }).prototype = AsyncSnapshot.prototype;
-    (AsyncSnapshot.waiting = function() {
-      AsyncSnapshot.__.call(this, async$.ConnectionState.waiting, null, null, null);
-    }).prototype = AsyncSnapshot.prototype;
-    (AsyncSnapshot.withData = function(state, data) {
-      AsyncSnapshot.__.call(this, state, data, null, null);
-    }).prototype = AsyncSnapshot.prototype;
-    (AsyncSnapshot.withError = function(state, error, stackTrace = C[5] || CT.C5) {
-      AsyncSnapshot.__.call(this, state, null, error, stackTrace);
-    }).prototype = AsyncSnapshot.prototype;
-    dart.addTypeTests(AsyncSnapshot);
-    AsyncSnapshot.prototype[_is_AsyncSnapshot_default] = true;
-    dart.addTypeCaches(AsyncSnapshot);
-    dart.setMethodSignature(AsyncSnapshot, () => ({
-      __proto__: dart.getMethods(AsyncSnapshot.__proto__),
-      inState: dart.fnType(async$.AsyncSnapshot$(T), [async$.ConnectionState])
-    }));
-    dart.setGetterSignature(AsyncSnapshot, () => ({
-      __proto__: dart.getGetters(AsyncSnapshot.__proto__),
-      requireData: T,
-      hasData: core.bool,
-      hasError: core.bool
-    }));
-    dart.setLibraryUri(AsyncSnapshot, I[0]);
-    dart.setFieldSignature(AsyncSnapshot, () => ({
-      __proto__: dart.getFields(AsyncSnapshot.__proto__),
-      connectionState: dart.finalFieldType(async$.ConnectionState),
-      data: dart.finalFieldType(dart.nullable(T)),
-      error: dart.finalFieldType(dart.nullable(core.Object)),
-      stackTrace: dart.finalFieldType(dart.nullable(core.StackTrace))
-    }));
-    dart.defineExtensionMethods(AsyncSnapshot, ['toString', '_equals']);
-    dart.defineExtensionAccessors(AsyncSnapshot, ['hashCode']);
-    return AsyncSnapshot;
-  });
-  async$.AsyncSnapshot = async$.AsyncSnapshot$();
-  dart.addTypeTests(async$.AsyncSnapshot, _is_AsyncSnapshot_default);
-  var builder$ = dart.privateName(async$, "StreamBuilder.builder");
-  var initialData$ = dart.privateName(async$, "StreamBuilder.initialData");
-  const _is_StreamBuilder_default = Symbol('_is_StreamBuilder_default');
-  async$.StreamBuilder$ = dart.generic(T => {
-    var AsyncSnapshotOfT = () => (AsyncSnapshotOfT = dart.constFn(async$.AsyncSnapshot$(T)))();
-    class StreamBuilder extends async$.StreamBuilderBase$(T, async$.AsyncSnapshot$(T)) {
-      get builder() {
-        return this[builder$];
-      }
-      set builder(value) {
-        super.builder = value;
-      }
-      get initialData() {
-        return this[initialData$];
-      }
-      set initialData(value) {
-        super.initialData = value;
-      }
-      initial() {
-        return this.initialData == null ? new (AsyncSnapshotOfT()).nothing() : new (AsyncSnapshotOfT()).withData(async$.ConnectionState.none, T.as(this.initialData));
-      }
-      afterConnected(current) {
-        AsyncSnapshotOfT().as(current);
-        return current.inState(async$.ConnectionState.waiting);
-      }
-      afterData(current, data) {
-        AsyncSnapshotOfT().as(current);
-        T.as(data);
-        return new (AsyncSnapshotOfT()).withData(async$.ConnectionState.active, data);
-      }
-      afterError(current, error, stackTrace) {
-        AsyncSnapshotOfT().as(current);
-        return new (AsyncSnapshotOfT()).withError(async$.ConnectionState.active, error, stackTrace);
-      }
-      afterDone(current) {
-        AsyncSnapshotOfT().as(current);
-        return current.inState(async$.ConnectionState.done);
-      }
-      afterDisconnected(current) {
-        AsyncSnapshotOfT().as(current);
-        return current.inState(async$.ConnectionState.none);
-      }
-      build(context, currentSummary) {
-        let t2, t1;
-        AsyncSnapshotOfT().as(currentSummary);
-        t1 = context;
-        t2 = currentSummary;
-        return this.builder(t1, t2);
-      }
+  }, false);
+  input_border._NoInputBorder = class _NoInputBorder extends input_border.InputBorder {
+    copyWith(opts) {
+      let borderSide = opts && 'borderSide' in opts ? opts.borderSide : null;
+      return C[3] || CT.C3;
     }
-    (StreamBuilder.new = function(opts) {
-      let key = opts && 'key' in opts ? opts.key : null;
-      let initialData = opts && 'initialData' in opts ? opts.initialData : null;
-      let stream = opts && 'stream' in opts ? opts.stream : null;
-      let builder = opts && 'builder' in opts ? opts.builder : null;
-      let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-      this[initialData$] = initialData;
-      this[builder$] = builder;
-      if (!(builder !== null)) dart.assertFailed(null, I[1], 502, 15, "builder != null");
-      StreamBuilder.__proto__.new.call(this, {key: key, stream: stream, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
-      ;
-    }).prototype = StreamBuilder.prototype;
-    dart.addTypeTests(StreamBuilder);
-    StreamBuilder.prototype[_is_StreamBuilder_default] = true;
-    dart.addTypeCaches(StreamBuilder);
-    dart.setMethodSignature(StreamBuilder, () => ({
-      __proto__: dart.getMethods(StreamBuilder.__proto__),
-      initial: dart.fnType(async$.AsyncSnapshot$(T), []),
-      afterData: dart.fnType(async$.AsyncSnapshot$(T), [dart.nullable(core.Object), dart.nullable(core.Object)]),
-      build: dart.fnType(framework.Widget, [framework.BuildContext, dart.nullable(core.Object)])
-    }));
-    dart.setLibraryUri(StreamBuilder, I[0]);
-    dart.setFieldSignature(StreamBuilder, () => ({
-      __proto__: dart.getFields(StreamBuilder.__proto__),
-      builder: dart.finalFieldType(dart.fnType(framework.Widget, [framework.BuildContext, async$.AsyncSnapshot$(T)])),
-      initialData: dart.finalFieldType(dart.nullable(T))
-    }));
-    return StreamBuilder;
-  });
-  async$.StreamBuilder = async$.StreamBuilder$();
-  dart.addTypeTests(async$.StreamBuilder, _is_StreamBuilder_default);
-  var future$ = dart.privateName(async$, "FutureBuilder.future");
-  var builder$0 = dart.privateName(async$, "FutureBuilder.builder");
-  var initialData$0 = dart.privateName(async$, "FutureBuilder.initialData");
-  const _is_FutureBuilder_default = Symbol('_is_FutureBuilder_default');
-  async$.FutureBuilder$ = dart.generic(T => {
-    var _FutureBuilderStateOfT = () => (_FutureBuilderStateOfT = dart.constFn(async$._FutureBuilderState$(T)))();
-    class FutureBuilder extends framework.StatefulWidget {
-      get future() {
-        return this[future$];
-      }
-      set future(value) {
-        super.future = value;
-      }
-      get builder() {
-        return this[builder$0];
-      }
-      set builder(value) {
-        super.builder = value;
-      }
-      get initialData() {
-        return this[initialData$0];
-      }
-      set initialData(value) {
-        super.initialData = value;
-      }
-      createState() {
-        return new (_FutureBuilderStateOfT()).new();
-      }
+    get isOutline() {
+      return false;
     }
-    (FutureBuilder.new = function(opts) {
-      let key = opts && 'key' in opts ? opts.key : null;
-      let future = opts && 'future' in opts ? opts.future : null;
-      let initialData = opts && 'initialData' in opts ? opts.initialData : null;
-      let builder = opts && 'builder' in opts ? opts.builder : null;
-      let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-      this[future$] = future;
-      this[initialData$0] = initialData;
-      this[builder$0] = builder;
-      if (!(builder !== null)) dart.assertFailed(null, I[1], 697, 15, "builder != null");
-      FutureBuilder.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
-      ;
-    }).prototype = FutureBuilder.prototype;
-    dart.addTypeTests(FutureBuilder);
-    FutureBuilder.prototype[_is_FutureBuilder_default] = true;
-    dart.addTypeCaches(FutureBuilder);
-    dart.setMethodSignature(FutureBuilder, () => ({
-      __proto__: dart.getMethods(FutureBuilder.__proto__),
-      createState: dart.fnType(framework.State$(async$.FutureBuilder$(T)), [])
-    }));
-    dart.setLibraryUri(FutureBuilder, I[0]);
-    dart.setFieldSignature(FutureBuilder, () => ({
-      __proto__: dart.getFields(FutureBuilder.__proto__),
-      future: dart.finalFieldType(dart.nullable(async.Future$(T))),
-      builder: dart.finalFieldType(dart.fnType(framework.Widget, [framework.BuildContext, async$.AsyncSnapshot$(T)])),
-      initialData: dart.finalFieldType(dart.nullable(T))
-    }));
-    return FutureBuilder;
-  });
-  async$.FutureBuilder = async$.FutureBuilder$();
-  dart.addTypeTests(async$.FutureBuilder, _is_FutureBuilder_default);
-  var _activeCallbackIdentity = dart.privateName(async$, "_activeCallbackIdentity");
-  var ___FutureBuilderState__snapshot = dart.privateName(async$, "_#_FutureBuilderState#_snapshot");
-  var _snapshot = dart.privateName(async$, "_snapshot");
-  const _is__FutureBuilderState_default = Symbol('_is__FutureBuilderState_default');
-  async$._FutureBuilderState$ = dart.generic(T => {
-    var AsyncSnapshotOfT = () => (AsyncSnapshotOfT = dart.constFn(async$.AsyncSnapshot$(T)))();
-    var FutureBuilderOfT = () => (FutureBuilderOfT = dart.constFn(async$.FutureBuilder$(T)))();
-    var BuildContextAndAsyncSnapshotOfTToWidget = () => (BuildContextAndAsyncSnapshotOfTToWidget = dart.constFn(dart.fnType(framework.Widget, [framework.BuildContext, AsyncSnapshotOfT()])))();
-    var TToNull = () => (TToNull = dart.constFn(dart.fnType(core.Null, [T])))();
-    class _FutureBuilderState extends framework.State$(async$.FutureBuilder$(T)) {
-      get [_snapshot]() {
-        let t1;
-        t1 = this[___FutureBuilderState__snapshot];
-        return t1 == null ? dart.throw(new _internal.LateError.fieldNI("_snapshot")) : t1;
+    get dimensions() {
+      return edge_insets.EdgeInsets.zero;
+    }
+    scale(t) {
+      return C[3] || CT.C3;
+    }
+    getInnerPath(rect, opts) {
+      let t0;
+      let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
+      t0 = ui.Path.new();
+      return (() => {
+        t0.addRect(rect);
+        return t0;
+      })();
+    }
+    getOuterPath(rect, opts) {
+      let t0;
+      let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
+      t0 = ui.Path.new();
+      return (() => {
+        t0.addRect(rect);
+        return t0;
+      })();
+    }
+    paint(canvas, rect, opts) {
+      let gapStart = opts && 'gapStart' in opts ? opts.gapStart : null;
+      let gapExtent = opts && 'gapExtent' in opts ? opts.gapExtent : 0;
+      let gapPercentage = opts && 'gapPercentage' in opts ? opts.gapPercentage : 0;
+      let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
+    }
+  };
+  (input_border._NoInputBorder.new = function() {
+    input_border._NoInputBorder.__proto__.new.call(this, {borderSide: borders.BorderSide.none});
+    ;
+  }).prototype = input_border._NoInputBorder.prototype;
+  dart.addTypeTests(input_border._NoInputBorder);
+  dart.addTypeCaches(input_border._NoInputBorder);
+  dart.setMethodSignature(input_border._NoInputBorder, () => ({
+    __proto__: dart.getMethods(input_border._NoInputBorder.__proto__),
+    copyWith: dart.fnType(input_border._NoInputBorder, [], {borderSide: dart.nullable(borders.BorderSide)}, {}),
+    scale: dart.fnType(input_border._NoInputBorder, [core.double]),
+    getInnerPath: dart.fnType(ui.Path, [ui.Rect], {textDirection: dart.nullable(ui.TextDirection)}, {}),
+    getOuterPath: dart.fnType(ui.Path, [ui.Rect], {textDirection: dart.nullable(ui.TextDirection)}, {}),
+    paint: dart.fnType(dart.void, [ui.Canvas, ui.Rect], {gapExtent: core.double, gapPercentage: core.double, gapStart: dart.nullable(core.double), textDirection: dart.nullable(ui.TextDirection)}, {})
+  }));
+  dart.setGetterSignature(input_border._NoInputBorder, () => ({
+    __proto__: dart.getGetters(input_border._NoInputBorder.__proto__),
+    isOutline: core.bool,
+    dimensions: edge_insets.EdgeInsetsGeometry
+  }));
+  dart.setLibraryUri(input_border._NoInputBorder, I[1]);
+  var borderRadius$ = dart.privateName(input_border, "UnderlineInputBorder.borderRadius");
+  var Radius_y = dart.privateName(ui, "Radius.y");
+  var Radius_x = dart.privateName(ui, "Radius.x");
+  var BorderRadius_bottomRight = dart.privateName(border_radius, "BorderRadius.bottomRight");
+  var BorderRadius_bottomLeft = dart.privateName(border_radius, "BorderRadius.bottomLeft");
+  var BorderRadius_topRight = dart.privateName(border_radius, "BorderRadius.topRight");
+  var BorderRadius_topLeft = dart.privateName(border_radius, "BorderRadius.topLeft");
+  input_border.UnderlineInputBorder = class UnderlineInputBorder extends input_border.InputBorder {
+    get borderRadius() {
+      return this[borderRadius$];
+    }
+    set borderRadius(value) {
+      super.borderRadius = value;
+    }
+    get isOutline() {
+      return false;
+    }
+    copyWith(opts) {
+      let t0, t0$;
+      let borderSide = opts && 'borderSide' in opts ? opts.borderSide : null;
+      let borderRadius = opts && 'borderRadius' in opts ? opts.borderRadius : null;
+      return new input_border.UnderlineInputBorder.new({borderSide: (t0 = borderSide, t0 == null ? this.borderSide : t0), borderRadius: (t0$ = borderRadius, t0$ == null ? this.borderRadius : t0$)});
+    }
+    get dimensions() {
+      return new edge_insets.EdgeInsets.only({bottom: this.borderSide.width});
+    }
+    scale(t) {
+      return new input_border.UnderlineInputBorder.new({borderSide: this.borderSide.scale(t)});
+    }
+    getInnerPath(rect, opts) {
+      let t0;
+      let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
+      t0 = ui.Path.new();
+      return (() => {
+        t0.addRect(new ui.Rect.fromLTWH(rect.left, rect.top, rect.width, math.max(core.double, 0.0, rect.height - this.borderSide.width)));
+        return t0;
+      })();
+    }
+    getOuterPath(rect, opts) {
+      let t0;
+      let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
+      t0 = ui.Path.new();
+      return (() => {
+        t0.addRRect(this.borderRadius.resolve(textDirection).toRRect(rect));
+        return t0;
+      })();
+    }
+    lerpFrom(a, t) {
+      if (input_border.UnderlineInputBorder.is(a)) {
+        return new input_border.UnderlineInputBorder.new({borderSide: borders.BorderSide.lerp(a.borderSide, this.borderSide, t), borderRadius: dart.nullCheck(border_radius.BorderRadius.lerp(a.borderRadius, this.borderRadius, t))});
       }
-      set [_snapshot](t1) {
-        this[___FutureBuilderState__snapshot] = t1;
+      return super.lerpFrom(a, t);
+    }
+    lerpTo(b, t) {
+      if (input_border.UnderlineInputBorder.is(b)) {
+        return new input_border.UnderlineInputBorder.new({borderSide: borders.BorderSide.lerp(this.borderSide, b.borderSide, t), borderRadius: dart.nullCheck(border_radius.BorderRadius.lerp(this.borderRadius, b.borderRadius, t))});
       }
-      initState() {
-        super.initState();
-        this[_snapshot] = this.widget.initialData == null ? new (AsyncSnapshotOfT()).nothing() : new (AsyncSnapshotOfT()).withData(async$.ConnectionState.none, T.as(this.widget.initialData));
-        this[_subscribe]();
+      return super.lerpTo(b, t);
+    }
+    paint(canvas, rect, opts) {
+      let gapStart = opts && 'gapStart' in opts ? opts.gapStart : null;
+      let gapExtent = opts && 'gapExtent' in opts ? opts.gapExtent : 0;
+      let gapPercentage = opts && 'gapPercentage' in opts ? opts.gapPercentage : 0;
+      let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
+      if (!this.borderRadius.bottomLeft._equals(ui.Radius.zero) || !this.borderRadius.bottomRight._equals(ui.Radius.zero)) canvas.clipPath(this.getOuterPath(rect, {textDirection: textDirection}));
+      canvas.drawLine(rect.bottomLeft, rect.bottomRight, this.borderSide.toPaint());
+    }
+    _equals(other) {
+      if (other == null) return false;
+      if (this === other) return true;
+      if (!other[$runtimeType]._equals(this[$runtimeType])) return false;
+      return input_border.InputBorder.is(other) && other.borderSide._equals(this.borderSide);
+    }
+    get hashCode() {
+      return this.borderSide.hashCode;
+    }
+  };
+  (input_border.UnderlineInputBorder.new = function(opts) {
+    let borderSide = opts && 'borderSide' in opts ? opts.borderSide : C[4] || CT.C4;
+    let borderRadius = opts && 'borderRadius' in opts ? opts.borderRadius : C[6] || CT.C6;
+    this[borderRadius$] = borderRadius;
+    if (!(borderRadius !== null)) dart.assertFailed(null, I[0], 151, 15, "borderRadius != null");
+    input_border.UnderlineInputBorder.__proto__.new.call(this, {borderSide: borderSide});
+    ;
+  }).prototype = input_border.UnderlineInputBorder.prototype;
+  dart.addTypeTests(input_border.UnderlineInputBorder);
+  dart.addTypeCaches(input_border.UnderlineInputBorder);
+  dart.setMethodSignature(input_border.UnderlineInputBorder, () => ({
+    __proto__: dart.getMethods(input_border.UnderlineInputBorder.__proto__),
+    copyWith: dart.fnType(input_border.UnderlineInputBorder, [], {borderRadius: dart.nullable(border_radius.BorderRadius), borderSide: dart.nullable(borders.BorderSide)}, {}),
+    scale: dart.fnType(input_border.UnderlineInputBorder, [core.double]),
+    getInnerPath: dart.fnType(ui.Path, [ui.Rect], {textDirection: dart.nullable(ui.TextDirection)}, {}),
+    getOuterPath: dart.fnType(ui.Path, [ui.Rect], {textDirection: dart.nullable(ui.TextDirection)}, {}),
+    paint: dart.fnType(dart.void, [ui.Canvas, ui.Rect], {gapExtent: core.double, gapPercentage: core.double, gapStart: dart.nullable(core.double), textDirection: dart.nullable(ui.TextDirection)}, {})
+  }));
+  dart.setGetterSignature(input_border.UnderlineInputBorder, () => ({
+    __proto__: dart.getGetters(input_border.UnderlineInputBorder.__proto__),
+    isOutline: core.bool,
+    dimensions: edge_insets.EdgeInsetsGeometry
+  }));
+  dart.setLibraryUri(input_border.UnderlineInputBorder, I[1]);
+  dart.setFieldSignature(input_border.UnderlineInputBorder, () => ({
+    __proto__: dart.getFields(input_border.UnderlineInputBorder.__proto__),
+    borderRadius: dart.finalFieldType(border_radius.BorderRadius)
+  }));
+  dart.defineExtensionMethods(input_border.UnderlineInputBorder, ['_equals']);
+  dart.defineExtensionAccessors(input_border.UnderlineInputBorder, ['hashCode']);
+  var gapPadding$ = dart.privateName(input_border, "OutlineInputBorder.gapPadding");
+  var borderRadius$0 = dart.privateName(input_border, "OutlineInputBorder.borderRadius");
+  var _gapBorderPath = dart.privateName(input_border, "_gapBorderPath");
+  var _name$ = dart.privateName(ui, "_name");
+  input_border.OutlineInputBorder = class OutlineInputBorder extends input_border.InputBorder {
+    get gapPadding() {
+      return this[gapPadding$];
+    }
+    set gapPadding(value) {
+      super.gapPadding = value;
+    }
+    get borderRadius() {
+      return this[borderRadius$0];
+    }
+    set borderRadius(value) {
+      super.borderRadius = value;
+    }
+    static _cornersAreCircular(borderRadius) {
+      return borderRadius.topLeft.x === borderRadius.topLeft.y && borderRadius.bottomLeft.x === borderRadius.bottomLeft.y && borderRadius.topRight.x === borderRadius.topRight.y && borderRadius.bottomRight.x === borderRadius.bottomRight.y;
+    }
+    get isOutline() {
+      return true;
+    }
+    copyWith(opts) {
+      let t0, t0$, t0$0;
+      let borderSide = opts && 'borderSide' in opts ? opts.borderSide : null;
+      let borderRadius = opts && 'borderRadius' in opts ? opts.borderRadius : null;
+      let gapPadding = opts && 'gapPadding' in opts ? opts.gapPadding : null;
+      return new input_border.OutlineInputBorder.new({borderSide: (t0 = borderSide, t0 == null ? this.borderSide : t0), borderRadius: (t0$ = borderRadius, t0$ == null ? this.borderRadius : t0$), gapPadding: (t0$0 = gapPadding, t0$0 == null ? this.gapPadding : t0$0)});
+    }
+    get dimensions() {
+      return new edge_insets.EdgeInsets.all(this.borderSide.width);
+    }
+    scale(t) {
+      return new input_border.OutlineInputBorder.new({borderSide: this.borderSide.scale(t), borderRadius: this.borderRadius['*'](t), gapPadding: this.gapPadding * t});
+    }
+    lerpFrom(a, t) {
+      if (input_border.OutlineInputBorder.is(a)) {
+        let outline = a;
+        return new input_border.OutlineInputBorder.new({borderRadius: dart.nullCheck(border_radius.BorderRadius.lerp(outline.borderRadius, this.borderRadius, t)), borderSide: borders.BorderSide.lerp(outline.borderSide, this.borderSide, t), gapPadding: outline.gapPadding});
       }
-      didUpdateWidget(oldWidget) {
-        FutureBuilderOfT().as(oldWidget);
-        super.didUpdateWidget(oldWidget);
-        if (!dart.equals(oldWidget.future, this.widget.future)) {
-          if (this[_activeCallbackIdentity] != null) {
-            this[_unsubscribe]();
-            this[_snapshot] = this[_snapshot].inState(async$.ConnectionState.none);
+      return super.lerpFrom(a, t);
+    }
+    lerpTo(b, t) {
+      if (input_border.OutlineInputBorder.is(b)) {
+        let outline = b;
+        return new input_border.OutlineInputBorder.new({borderRadius: dart.nullCheck(border_radius.BorderRadius.lerp(this.borderRadius, outline.borderRadius, t)), borderSide: borders.BorderSide.lerp(this.borderSide, outline.borderSide, t), gapPadding: outline.gapPadding});
+      }
+      return super.lerpTo(b, t);
+    }
+    getInnerPath(rect, opts) {
+      let t0;
+      let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
+      t0 = ui.Path.new();
+      return (() => {
+        t0.addRRect(this.borderRadius.resolve(textDirection).toRRect(rect).deflate(this.borderSide.width));
+        return t0;
+      })();
+    }
+    getOuterPath(rect, opts) {
+      let t0;
+      let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
+      t0 = ui.Path.new();
+      return (() => {
+        t0.addRRect(this.borderRadius.resolve(textDirection).toRRect(rect));
+        return t0;
+      })();
+    }
+    [_gapBorderPath](canvas, center, start, extent) {
+      let t0, t0$, t0$0;
+      let scaledRRect = center.scaleRadii();
+      let tlCorner = new ui.Rect.fromLTWH(scaledRRect.left, scaledRRect.top, scaledRRect.tlRadiusX * 2.0, scaledRRect.tlRadiusY * 2.0);
+      let trCorner = new ui.Rect.fromLTWH(scaledRRect.right - scaledRRect.trRadiusX * 2.0, scaledRRect.top, scaledRRect.trRadiusX * 2.0, scaledRRect.trRadiusY * 2.0);
+      let brCorner = new ui.Rect.fromLTWH(scaledRRect.right - scaledRRect.brRadiusX * 2.0, scaledRRect.bottom - scaledRRect.brRadiusY * 2.0, scaledRRect.brRadiusX * 2.0, scaledRRect.brRadiusY * 2.0);
+      let blCorner = new ui.Rect.fromLTWH(scaledRRect.left, scaledRRect.bottom - scaledRRect.blRadiusY * 2.0, scaledRRect.blRadiusX * 2.0, scaledRRect.blRadiusX * 2.0);
+      let tlCornerArcSweep = start < scaledRRect.tlRadiusX ? math.asin((start / scaledRRect.tlRadiusX)[$clamp](-1.0, 1.0)) : 3.141592653589793 / 2.0;
+      let path = (t0 = ui.Path.new(), (() => {
+        t0.addArc(tlCorner, 3.141592653589793, tlCornerArcSweep);
+        t0.moveTo(scaledRRect.left + scaledRRect.tlRadiusX, scaledRRect.top);
+        return t0;
+      })());
+      if (start > scaledRRect.tlRadiusX) path.lineTo(scaledRRect.left + start, scaledRRect.top);
+      if (start + extent < scaledRRect.width - scaledRRect.trRadiusX) {
+        t0$ = path;
+        (() => {
+          t0$.relativeMoveTo(extent, 0.0);
+          t0$.lineTo(scaledRRect.right - scaledRRect.trRadiusX, scaledRRect.top);
+          t0$.addArc(trCorner, 4.71238898038469, 1.5707963267948966);
+          return t0$;
+        })();
+      } else if (start + extent < scaledRRect.width) {
+        let dx = scaledRRect.width - (start + extent);
+        let sweep = math.acos(dx / scaledRRect.trRadiusX);
+        path.addArc(trCorner, 4.71238898038469 + sweep, 1.5707963267948966 - sweep);
+      }
+      t0$0 = path;
+      return (() => {
+        t0$0.moveTo(scaledRRect.right, scaledRRect.top + scaledRRect.trRadiusY);
+        t0$0.lineTo(scaledRRect.right, scaledRRect.bottom - scaledRRect.brRadiusY);
+        t0$0.addArc(brCorner, 0.0, 1.5707963267948966);
+        t0$0.lineTo(scaledRRect.left + scaledRRect.blRadiusX, scaledRRect.bottom);
+        t0$0.addArc(blCorner, 3.141592653589793 / 2.0, 1.5707963267948966);
+        t0$0.lineTo(scaledRRect.left, scaledRRect.top + scaledRRect.tlRadiusY);
+        return t0$0;
+      })();
+    }
+    paint(canvas, rect, opts) {
+      let gapStart = opts && 'gapStart' in opts ? opts.gapStart : null;
+      let gapExtent = opts && 'gapExtent' in opts ? opts.gapExtent : 0;
+      let gapPercentage = opts && 'gapPercentage' in opts ? opts.gapPercentage : 0;
+      let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
+      if (!(gapExtent !== null)) dart.assertFailed(null, I[0], 469, 12, "gapExtent != null");
+      if (!(gapPercentage >= 0.0 && gapPercentage <= 1.0)) dart.assertFailed(null, I[0], 470, 12, "gapPercentage >= 0.0 && gapPercentage <= 1.0");
+      if (!input_border.OutlineInputBorder._cornersAreCircular(this.borderRadius)) dart.assertFailed(null, I[0], 471, 12, "_cornersAreCircular(borderRadius)");
+      let paint = this.borderSide.toPaint();
+      let outer = this.borderRadius.toRRect(rect);
+      let center = outer.deflate(this.borderSide.width / 2.0);
+      if (gapStart == null || gapExtent <= 0.0 || gapPercentage === 0.0) {
+        canvas.drawRRect(center, paint);
+      } else {
+        let extent = dart.nullCheck(ui.lerpDouble(0.0, gapExtent + this.gapPadding * 2.0, gapPercentage));
+        switch (dart.nullCheck(textDirection)) {
+          case C[10] || CT.C10:
+          {
+            let path = this[_gapBorderPath](canvas, center, math.max(core.double, 0.0, dart.notNull(gapStart) + this.gapPadding - extent), extent);
+            canvas.drawPath(path, paint);
+            break;
           }
-          this[_subscribe]();
+          case C[11] || CT.C11:
+          {
+            let path = this[_gapBorderPath](canvas, center, math.max(core.double, 0.0, dart.notNull(gapStart) - this.gapPadding), extent);
+            canvas.drawPath(path, paint);
+            break;
+          }
         }
-      }
-      build(context) {
-        let t4, t3, t2;
-        t2 = this.widget;
-        t3 = context;
-        t4 = this[_snapshot];
-        return BuildContextAndAsyncSnapshotOfTToWidget().as(t2.builder)(t3, t4);
-      }
-      dispose() {
-        this[_unsubscribe]();
-        super.dispose();
-      }
-      [_subscribe]() {
-        if (this.widget.future != null) {
-          let callbackIdentity = new core.Object.new();
-          this[_activeCallbackIdentity] = callbackIdentity;
-          dart.nullCheck(this.widget.future).then(dart.void, dart.fn(data => {
-            if (dart.equals(this[_activeCallbackIdentity], callbackIdentity)) {
-              this.setState(dart.fn(() => {
-                this[_snapshot] = new (AsyncSnapshotOfT()).withData(async$.ConnectionState.done, data);
-              }, T$.VoidTovoid()));
-            }
-          }, TToNull()), {onError: dart.fn((error, stackTrace) => {
-              if (dart.equals(this[_activeCallbackIdentity], callbackIdentity)) {
-                this.setState(dart.fn(() => {
-                  this[_snapshot] = new (AsyncSnapshotOfT()).withError(async$.ConnectionState.done, error, stackTrace);
-                }, T$.VoidTovoid()));
-              }
-            }, T$.ObjectAndStackTraceToNull())});
-          this[_snapshot] = this[_snapshot].inState(async$.ConnectionState.waiting);
-        }
-      }
-      [_unsubscribe]() {
-        this[_activeCallbackIdentity] = null;
       }
     }
-    (_FutureBuilderState.new = function() {
-      this[_activeCallbackIdentity] = null;
-      this[___FutureBuilderState__snapshot] = null;
-      _FutureBuilderState.__proto__.new.call(this);
-      ;
-    }).prototype = _FutureBuilderState.prototype;
-    dart.addTypeTests(_FutureBuilderState);
-    _FutureBuilderState.prototype[_is__FutureBuilderState_default] = true;
-    dart.addTypeCaches(_FutureBuilderState);
-    dart.setMethodSignature(_FutureBuilderState, () => ({
-      __proto__: dart.getMethods(_FutureBuilderState.__proto__),
-      build: dart.fnType(framework.Widget, [framework.BuildContext]),
-      [_subscribe]: dart.fnType(dart.void, []),
-      [_unsubscribe]: dart.fnType(dart.void, [])
-    }));
-    dart.setGetterSignature(_FutureBuilderState, () => ({
-      __proto__: dart.getGetters(_FutureBuilderState.__proto__),
-      [_snapshot]: async$.AsyncSnapshot$(T)
-    }));
-    dart.setSetterSignature(_FutureBuilderState, () => ({
-      __proto__: dart.getSetters(_FutureBuilderState.__proto__),
-      [_snapshot]: async$.AsyncSnapshot$(T)
-    }));
-    dart.setLibraryUri(_FutureBuilderState, I[0]);
-    dart.setFieldSignature(_FutureBuilderState, () => ({
-      __proto__: dart.getFields(_FutureBuilderState.__proto__),
-      [_activeCallbackIdentity]: dart.fieldType(dart.nullable(core.Object)),
-      [___FutureBuilderState__snapshot]: dart.fieldType(dart.nullable(async$.AsyncSnapshot$(T)))
-    }));
-    return _FutureBuilderState;
-  });
-  async$._FutureBuilderState = async$._FutureBuilderState$();
-  dart.addTypeTests(async$._FutureBuilderState, _is__FutureBuilderState_default);
-  dart.trackLibraries("packages/flutter/src/widgets/async.dart", {
-    "package:flutter/src/widgets/async.dart": async$
+    _equals(other) {
+      if (other == null) return false;
+      if (this === other) return true;
+      if (!other[$runtimeType]._equals(this[$runtimeType])) return false;
+      return input_border.OutlineInputBorder.is(other) && other.borderSide._equals(this.borderSide) && other.borderRadius._equals(this.borderRadius) && other.gapPadding === this.gapPadding;
+    }
+    get hashCode() {
+      return ui.hashValues(this.borderSide, this.borderRadius, this.gapPadding);
+    }
+  };
+  (input_border.OutlineInputBorder.new = function(opts) {
+    let borderSide = opts && 'borderSide' in opts ? opts.borderSide : C[4] || CT.C4;
+    let borderRadius = opts && 'borderRadius' in opts ? opts.borderRadius : C[9] || CT.C9;
+    let gapPadding = opts && 'gapPadding' in opts ? opts.gapPadding : 4;
+    this[borderRadius$0] = borderRadius;
+    this[gapPadding$] = gapPadding;
+    if (!(borderRadius !== null)) dart.assertFailed(null, I[0], 290, 15, "borderRadius != null");
+    if (!(gapPadding !== null && gapPadding >= 0.0)) dart.assertFailed(null, I[0], 291, 15, "gapPadding != null && gapPadding >= 0.0");
+    input_border.OutlineInputBorder.__proto__.new.call(this, {borderSide: borderSide});
+    ;
+  }).prototype = input_border.OutlineInputBorder.prototype;
+  dart.addTypeTests(input_border.OutlineInputBorder);
+  dart.addTypeCaches(input_border.OutlineInputBorder);
+  dart.setMethodSignature(input_border.OutlineInputBorder, () => ({
+    __proto__: dart.getMethods(input_border.OutlineInputBorder.__proto__),
+    copyWith: dart.fnType(input_border.OutlineInputBorder, [], {borderRadius: dart.nullable(border_radius.BorderRadius), borderSide: dart.nullable(borders.BorderSide), gapPadding: dart.nullable(core.double)}, {}),
+    scale: dart.fnType(input_border.OutlineInputBorder, [core.double]),
+    getInnerPath: dart.fnType(ui.Path, [ui.Rect], {textDirection: dart.nullable(ui.TextDirection)}, {}),
+    getOuterPath: dart.fnType(ui.Path, [ui.Rect], {textDirection: dart.nullable(ui.TextDirection)}, {}),
+    [_gapBorderPath]: dart.fnType(ui.Path, [ui.Canvas, ui.RRect, core.double, core.double]),
+    paint: dart.fnType(dart.void, [ui.Canvas, ui.Rect], {gapExtent: core.double, gapPercentage: core.double, gapStart: dart.nullable(core.double), textDirection: dart.nullable(ui.TextDirection)}, {})
+  }));
+  dart.setGetterSignature(input_border.OutlineInputBorder, () => ({
+    __proto__: dart.getGetters(input_border.OutlineInputBorder.__proto__),
+    isOutline: core.bool,
+    dimensions: edge_insets.EdgeInsetsGeometry
+  }));
+  dart.setLibraryUri(input_border.OutlineInputBorder, I[1]);
+  dart.setFieldSignature(input_border.OutlineInputBorder, () => ({
+    __proto__: dart.getFields(input_border.OutlineInputBorder.__proto__),
+    gapPadding: dart.finalFieldType(core.double),
+    borderRadius: dart.finalFieldType(border_radius.BorderRadius)
+  }));
+  dart.defineExtensionMethods(input_border.OutlineInputBorder, ['_equals']);
+  dart.defineExtensionAccessors(input_border.OutlineInputBorder, ['hashCode']);
+  dart.trackLibraries("packages/flutter/src/material/input_border.dart", {
+    "package:flutter/src/material/input_border.dart": input_border
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["async.dart"],"names":[],"mappings":"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","file":"../../../../../../../packages/flutter/src/widgets/async.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["input_border.dart"],"names":[],"mappings":"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","file":"../../../../../../../packages/flutter/src/material/input_border.dart.lib.js"}');
   // Exports:
   return {
-    src__widgets__async: async$
+    src__material__input_border: input_border
   };
 }));
 
-//# sourceMappingURL=async.dart.lib.js.map
+//# sourceMappingURL=input_border.dart.lib.js.map

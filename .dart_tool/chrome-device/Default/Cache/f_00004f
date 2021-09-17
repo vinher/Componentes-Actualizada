@@ -1,40 +1,51 @@
-define(['dart_sdk', 'packages/flutter/src/foundation/object.dart', 'packages/flutter/src/painting/edge_insets.dart', 'packages/flutter/src/foundation/collections.dart'], (function load__packages__flutter__src__painting__borders_dart(dart_sdk, packages__flutter__src__foundation__object$46dart, packages__flutter__src__painting__edge_insets$46dart, packages__flutter__src__foundation__collections$46dart) {
+define(['dart_sdk', 'packages/flutter/src/painting/alignment.dart', 'packages/flutter/src/painting/box_fit.dart', 'packages/flutter/src/foundation/object.dart', 'packages/flutter/src/painting/_network_image_web.dart', 'packages/flutter/src/foundation/debug.dart', 'packages/flutter/src/painting/image_stream.dart', 'packages/flutter/src/painting/debug.dart', 'packages/flutter/src/scheduler/binding.dart'], (function load__packages__flutter__src__painting__decoration_image_dart(dart_sdk, packages__flutter__src__painting__alignment$46dart, packages__flutter__src__painting__box_fit$46dart, packages__flutter__src__foundation__object$46dart, packages__flutter__src__painting___network_image_web$46dart, packages__flutter__src__foundation__debug$46dart, packages__flutter__src__painting__image_stream$46dart, packages__flutter__src__painting__debug$46dart, packages__flutter__src__scheduler__binding$46dart) {
   'use strict';
   const core = dart_sdk.core;
   const ui = dart_sdk.ui;
-  const math = dart_sdk.math;
   const _interceptors = dart_sdk._interceptors;
+  const collection = dart_sdk.collection;
+  const _engine = dart_sdk._engine;
+  const developer = dart_sdk.developer;
+  const _js_helper = dart_sdk._js_helper;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
+  const alignment = packages__flutter__src__painting__alignment$46dart.src__painting__alignment;
+  const box_fit = packages__flutter__src__painting__box_fit$46dart.src__painting__box_fit;
   const object = packages__flutter__src__foundation__object$46dart.src__foundation__object;
-  const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
-  const collections = packages__flutter__src__foundation__collections$46dart.src__foundation__collections;
-  var borders$ = Object.create(dart.library);
+  const image_provider = packages__flutter__src__painting___network_image_web$46dart.src__painting__image_provider;
+  const assertions = packages__flutter__src__foundation__debug$46dart.src__foundation__assertions;
+  const diagnostics = packages__flutter__src__foundation__debug$46dart.src__foundation__diagnostics;
+  const image_stream = packages__flutter__src__painting__image_stream$46dart.src__painting__image_stream;
+  const debug = packages__flutter__src__painting__debug$46dart.src__painting__debug;
+  const binding = packages__flutter__src__scheduler__binding$46dart.src__scheduler__binding;
+  var decoration_image = Object.create(dart.library);
   var $runtimeType = dartx.runtimeType;
-  var $toStringAsFixed = dartx.toStringAsFixed;
-  var $length = dartx.length;
-  var $any = dartx.any;
-  var $fold = dartx.fold;
-  var $last = dartx.last;
-  var $first = dartx.first;
-  var $_set = dartx._set;
-  var $addAll = dartx.addAll;
+  var $_equals = dartx._equals;
   var $add = dartx.add;
-  var $map = dartx.map;
-  var $toList = dartx.toList;
-  var $_get = dartx._get;
-  var $reversed = dartx.reversed;
   var $join = dartx.join;
+  var $isNotEmpty = dartx.isNotEmpty;
+  var $toDouble = dartx.toDouble;
+  var $truncate = dartx.truncate;
+  var $toInt = dartx.toInt;
+  var $_get = dartx._get;
+  var $_set = dartx._set;
+  var $values = dartx.values;
+  var $toSet = dartx.toSet;
+  var $isEmpty = dartx.isEmpty;
+  var $floor = dartx.floor;
+  var $ceil = dartx.ceil;
   dart._checkModuleNullSafetyMode(true);
   var T = {
-    JSArrayOfShapeBorder: () => (T.JSArrayOfShapeBorder = dart.constFn(_interceptors.JSArray$(borders$.ShapeBorder)))(),
-    ShapeBorderTobool: () => (T.ShapeBorderTobool = dart.constFn(dart.fnType(core.bool, [borders$.ShapeBorder])))(),
-    EdgeInsetsGeometryAndShapeBorderToEdgeInsetsGeometry: () => (T.EdgeInsetsGeometryAndShapeBorderToEdgeInsetsGeometry = dart.constFn(dart.fnType(edge_insets.EdgeInsetsGeometry, [edge_insets.EdgeInsetsGeometry, borders$.ShapeBorder])))(),
-    ListOfShapeBorder: () => (T.ListOfShapeBorder = dart.constFn(core.List$(borders$.ShapeBorder)))(),
-    ShapeBorderToShapeBorder: () => (T.ShapeBorderToShapeBorder = dart.constFn(dart.fnType(borders$.ShapeBorder, [borders$.ShapeBorder])))(),
-    ShapeBorderN: () => (T.ShapeBorderN = dart.constFn(dart.nullable(borders$.ShapeBorder)))(),
-    JSArrayOfShapeBorderN: () => (T.JSArrayOfShapeBorderN = dart.constFn(_interceptors.JSArray$(T.ShapeBorderN())))(),
-    ShapeBorderToString: () => (T.ShapeBorderToString = dart.constFn(dart.fnType(core.String, [borders$.ShapeBorder])))()
+    JSArrayOfString: () => (T.JSArrayOfString = dart.constFn(_interceptors.JSArray$(core.String)))(),
+    DiagnosticsPropertyOfDecorationImage: () => (T.DiagnosticsPropertyOfDecorationImage = dart.constFn(diagnostics.DiagnosticsProperty$(decoration_image.DecorationImage)))(),
+    DiagnosticsPropertyOfImageConfiguration: () => (T.DiagnosticsPropertyOfImageConfiguration = dart.constFn(diagnostics.DiagnosticsProperty$(image_provider.ImageConfiguration)))(),
+    JSArrayOfDiagnosticsNode: () => (T.JSArrayOfDiagnosticsNode = dart.constFn(_interceptors.JSArray$(diagnostics.DiagnosticsNode)))(),
+    VoidTobool: () => (T.VoidTobool = dart.constFn(dart.fnType(core.bool, [])))(),
+    LinkedHashSetOfImageSizeInfo: () => (T.LinkedHashSetOfImageSizeInfo = dart.constFn(collection.LinkedHashSet$(debug.ImageSizeInfo)))(),
+    IdentityMapOfString$Object: () => (T.IdentityMapOfString$Object = dart.constFn(_js_helper.IdentityMap$(core.String, core.Object)))(),
+    IdentityMapOfString$ImageSizeInfo: () => (T.IdentityMapOfString$ImageSizeInfo = dart.constFn(_js_helper.IdentityMap$(core.String, debug.ImageSizeInfo)))(),
+    DurationTovoid: () => (T.DurationTovoid = dart.constFn(dart.fnType(dart.void, [core.Duration])))(),
+    SyncIterableOfRect: () => (T.SyncIterableOfRect = dart.constFn(_js_helper.SyncIterable$(ui.Rect)))()
   };
   const CT = Object.create({
     _: () => (C, CT)
@@ -42,540 +53,501 @@ define(['dart_sdk', 'packages/flutter/src/foundation/object.dart', 'packages/flu
   dart.defineLazy(CT, {
     get C0() {
       return C[0] = dart.const({
-        __proto__: borders$.BorderStyle.prototype,
-        [_name$]: "BorderStyle.none",
+        __proto__: decoration_image.ImageRepeat.prototype,
+        [_name$]: "ImageRepeat.repeat",
         index: 0
       });
     },
     get C1() {
       return C[1] = dart.const({
-        __proto__: borders$.BorderStyle.prototype,
-        [_name$]: "BorderStyle.solid",
+        __proto__: decoration_image.ImageRepeat.prototype,
+        [_name$]: "ImageRepeat.repeatX",
         index: 1
       });
     },
     get C2() {
-      return C[2] = dart.constList([C[0] || CT.C0, C[1] || CT.C1], borders$.BorderStyle);
+      return C[2] = dart.const({
+        __proto__: decoration_image.ImageRepeat.prototype,
+        [_name$]: "ImageRepeat.repeatY",
+        index: 2
+      });
     },
     get C3() {
       return C[3] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4278190080.0
+        __proto__: decoration_image.ImageRepeat.prototype,
+        [_name$]: "ImageRepeat.noRepeat",
+        index: 3
       });
     },
     get C4() {
-      return C[4] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 0
-      });
+      return C[4] = dart.constList([C[0] || CT.C0, C[1] || CT.C1, C[2] || CT.C2, C[3] || CT.C3], decoration_image.ImageRepeat);
     },
     get C5() {
       return C[5] = dart.const({
-        __proto__: borders$.BorderSide.prototype,
-        [style$]: C[0] || CT.C0,
-        [width$]: 0,
-        [color$]: C[3] || CT.C3
+        __proto__: alignment.Alignment.prototype,
+        [Alignment_y]: 0,
+        [Alignment_x]: 0
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: ui.FilterQuality.prototype,
+        [_name]: "FilterQuality.low",
+        index: 1
+      });
+    },
+    get C8() {
+      return C[8] = dart.constList([-1, 0, 0, 0, 255, 0, -1, 0, 0, 255, 0, 0, -1, 0, 255, 0, 0, 0, 1, 0], core.double);
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: _engine._CkMatrixColorFilter.prototype,
+        [_CkMatrixColorFilter_matrix]: C[8] || CT.C8
       });
     }
   }, false);
-  var C = Array(6).fill(void 0);
+  var C = Array(9).fill(void 0);
   var I = [
-    "package:flutter/src/painting/borders.dart",
-    "file:///C:/src/flutter/packages/flutter/lib/src/painting/borders.dart"
+    "package:flutter/src/painting/decoration_image.dart",
+    "file:///C:/src/flutter/packages/flutter/lib/src/painting/decoration_image.dart"
   ];
-  var _name$ = dart.privateName(borders$, "_name");
-  borders$.BorderStyle = class BorderStyle extends core.Object {
+  var _name$ = dart.privateName(decoration_image, "_name");
+  decoration_image.ImageRepeat = class ImageRepeat extends core.Object {
     toString() {
       return this[_name$];
     }
   };
-  (borders$.BorderStyle.new = function(index, _name) {
+  (decoration_image.ImageRepeat.new = function(index, _name) {
     this.index = index;
     this[_name$] = _name;
     ;
-  }).prototype = borders$.BorderStyle.prototype;
-  dart.addTypeTests(borders$.BorderStyle);
-  dart.addTypeCaches(borders$.BorderStyle);
-  dart.setLibraryUri(borders$.BorderStyle, I[0]);
-  dart.setFieldSignature(borders$.BorderStyle, () => ({
-    __proto__: dart.getFields(borders$.BorderStyle.__proto__),
+  }).prototype = decoration_image.ImageRepeat.prototype;
+  dart.addTypeTests(decoration_image.ImageRepeat);
+  dart.addTypeCaches(decoration_image.ImageRepeat);
+  dart.setLibraryUri(decoration_image.ImageRepeat, I[0]);
+  dart.setFieldSignature(decoration_image.ImageRepeat, () => ({
+    __proto__: dart.getFields(decoration_image.ImageRepeat.__proto__),
     index: dart.finalFieldType(core.int),
     [_name$]: dart.finalFieldType(core.String)
   }));
-  dart.defineExtensionMethods(borders$.BorderStyle, ['toString']);
-  borders$.BorderStyle.none = C[0] || CT.C0;
-  borders$.BorderStyle.solid = C[1] || CT.C1;
-  borders$.BorderStyle.values = C[2] || CT.C2;
-  var color$ = dart.privateName(borders$, "BorderSide.color");
-  var width$ = dart.privateName(borders$, "BorderSide.width");
-  var style$ = dart.privateName(borders$, "BorderSide.style");
-  var Color_value = dart.privateName(ui, "Color.value");
-  borders$.BorderSide = class BorderSide extends core.Object {
-    get color() {
-      return this[color$];
+  dart.defineExtensionMethods(decoration_image.ImageRepeat, ['toString']);
+  decoration_image.ImageRepeat.repeat = C[0] || CT.C0;
+  decoration_image.ImageRepeat.repeatX = C[1] || CT.C1;
+  decoration_image.ImageRepeat.repeatY = C[2] || CT.C2;
+  decoration_image.ImageRepeat.noRepeat = C[3] || CT.C3;
+  decoration_image.ImageRepeat.values = C[4] || CT.C4;
+  var image$ = dart.privateName(decoration_image, "DecorationImage.image");
+  var onError$ = dart.privateName(decoration_image, "DecorationImage.onError");
+  var colorFilter$ = dart.privateName(decoration_image, "DecorationImage.colorFilter");
+  var fit$ = dart.privateName(decoration_image, "DecorationImage.fit");
+  var alignment$ = dart.privateName(decoration_image, "DecorationImage.alignment");
+  var centerSlice$ = dart.privateName(decoration_image, "DecorationImage.centerSlice");
+  var repeat$ = dart.privateName(decoration_image, "DecorationImage.repeat");
+  var matchTextDirection$ = dart.privateName(decoration_image, "DecorationImage.matchTextDirection");
+  var scale$ = dart.privateName(decoration_image, "DecorationImage.scale");
+  var Alignment_y = dart.privateName(alignment, "Alignment.y");
+  var Alignment_x = dart.privateName(alignment, "Alignment.x");
+  decoration_image.DecorationImage = class DecorationImage extends core.Object {
+    get image() {
+      return this[image$];
     }
-    set color(value) {
-      super.color = value;
+    set image(value) {
+      super.image = value;
     }
-    get width() {
-      return this[width$];
+    get onError() {
+      return this[onError$];
     }
-    set width(value) {
-      super.width = value;
+    set onError(value) {
+      super.onError = value;
     }
-    get style() {
-      return this[style$];
+    get colorFilter() {
+      return this[colorFilter$];
     }
-    set style(value) {
-      super.style = value;
+    set colorFilter(value) {
+      super.colorFilter = value;
     }
-    static merge(a, b) {
-      if (!(a !== null)) dart.assertFailed(null, I[1], 86, 12, "a != null");
-      if (!(b !== null)) dart.assertFailed(null, I[1], 87, 12, "b != null");
-      if (!borders$.BorderSide.canMerge(a, b)) dart.assertFailed(null, I[1], 88, 12, "canMerge(a, b)");
-      let aIsNone = a.style === borders$.BorderStyle.none && a.width === 0.0;
-      let bIsNone = b.style === borders$.BorderStyle.none && b.width === 0.0;
-      if (aIsNone && bIsNone) return borders$.BorderSide.none;
-      if (aIsNone) return b;
-      if (bIsNone) return a;
-      if (!a.color._equals(b.color)) dart.assertFailed(null, I[1], 97, 12, "a.color == b.color");
-      if (!(a.style === b.style)) dart.assertFailed(null, I[1], 98, 12, "a.style == b.style");
-      return new borders$.BorderSide.new({color: a.color, width: a.width + b.width, style: a.style});
+    get fit() {
+      return this[fit$];
     }
-    copyWith(opts) {
-      let t0, t0$, t0$0;
-      let color = opts && 'color' in opts ? opts.color : null;
-      let width = opts && 'width' in opts ? opts.width : null;
-      let style = opts && 'style' in opts ? opts.style : null;
-      if (!(width == null || dart.notNull(width) >= 0.0)) dart.assertFailed(null, I[1], 135, 12, "width == null || width >= 0.0");
-      return new borders$.BorderSide.new({color: (t0 = color, t0 == null ? this.color : t0), width: (t0$ = width, t0$ == null ? this.width : t0$), style: (t0$0 = style, t0$0 == null ? this.style : t0$0)});
+    set fit(value) {
+      super.fit = value;
     }
-    scale(t) {
-      if (!(t !== null)) dart.assertFailed(null, I[1], 160, 12, "t != null");
-      return new borders$.BorderSide.new({color: this.color, width: math.max(core.double, 0.0, this.width * t), style: t <= 0.0 ? borders$.BorderStyle.none : this.style});
+    get alignment() {
+      return this[alignment$];
     }
-    toPaint() {
-      let t0, t0$;
-      switch (this.style) {
-        case C[1] || CT.C1:
-        {
-          t0 = ui.Paint.new();
-          return (() => {
-            t0.color = this.color;
-            t0.strokeWidth = this.width;
-            t0.style = ui.PaintingStyle.stroke;
-            return t0;
-          })();
-        }
-        case C[0] || CT.C0:
-        {
-          t0$ = ui.Paint.new();
-          return (() => {
-            t0$.color = C[4] || CT.C4;
-            t0$.strokeWidth = 0.0;
-            t0$.style = ui.PaintingStyle.stroke;
-            return t0$;
-          })();
-        }
-      }
+    set alignment(value) {
+      super.alignment = value;
     }
-    static canMerge(a, b) {
-      if (!(a !== null)) dart.assertFailed(null, I[1], 197, 12, "a != null");
-      if (!(b !== null)) dart.assertFailed(null, I[1], 198, 12, "b != null");
-      if (a.style === borders$.BorderStyle.none && a.width === 0.0 || b.style === borders$.BorderStyle.none && b.width === 0.0) return true;
-      return a.style === b.style && a.color._equals(b.color);
+    get centerSlice() {
+      return this[centerSlice$];
     }
-    static lerp(a, b, t) {
-      if (!(a !== null)) dart.assertFailed(null, I[1], 212, 12, "a != null");
-      if (!(b !== null)) dart.assertFailed(null, I[1], 213, 12, "b != null");
-      if (!(t !== null)) dart.assertFailed(null, I[1], 214, 12, "t != null");
-      if (t === 0.0) return a;
-      if (t === 1.0) return b;
-      let width = dart.nullCheck(ui.lerpDouble(a.width, b.width, t));
-      if (width < 0.0) return borders$.BorderSide.none;
-      if (a.style === b.style) {
-        return new borders$.BorderSide.new({color: dart.nullCheck(ui.Color.lerp(a.color, b.color, t)), width: width, style: a.style});
-      }
-      let colorA = null;
-      let colorB = null;
-      switch (a.style) {
-        case C[1] || CT.C1:
-        {
-          colorA = a.color;
-          break;
-        }
-        case C[0] || CT.C0:
-        {
-          colorA = a.color.withAlpha(0);
-          break;
-        }
-      }
-      switch (b.style) {
-        case C[1] || CT.C1:
-        {
-          colorB = b.color;
-          break;
-        }
-        case C[0] || CT.C0:
-        {
-          colorB = b.color.withAlpha(0);
-          break;
-        }
-      }
-      return new borders$.BorderSide.new({color: dart.nullCheck(ui.Color.lerp(colorA, colorB, t)), width: width, style: borders$.BorderStyle.solid});
+    set centerSlice(value) {
+      super.centerSlice = value;
+    }
+    get repeat() {
+      return this[repeat$];
+    }
+    set repeat(value) {
+      super.repeat = value;
+    }
+    get matchTextDirection() {
+      return this[matchTextDirection$];
+    }
+    set matchTextDirection(value) {
+      super.matchTextDirection = value;
+    }
+    get scale() {
+      return this[scale$];
+    }
+    set scale(value) {
+      super.scale = value;
+    }
+    createPainter(onChanged) {
+      if (!(onChanged !== null)) dart.assertFailed(null, I[1], 150, 12, "onChanged != null");
+      return new decoration_image.DecorationImagePainter.__(this, onChanged);
     }
     _equals(other) {
       if (other == null) return false;
       if (this === other) return true;
       if (!other[$runtimeType]._equals(this[$runtimeType])) return false;
-      return borders$.BorderSide.is(other) && other.color._equals(this.color) && other.width === this.width && other.style === this.style;
+      return decoration_image.DecorationImage.is(other) && other.image[$_equals](this.image) && dart.equals(other.colorFilter, this.colorFilter) && other.fit == this.fit && other.alignment._equals(this.alignment) && dart.equals(other.centerSlice, this.centerSlice) && other.repeat === this.repeat && other.matchTextDirection === this.matchTextDirection && other.scale === this.scale;
     }
     get hashCode() {
-      return ui.hashValues(this.color, this.width, this.style);
+      return ui.hashValues(this.image, this.colorFilter, this.fit, this.alignment, this.centerSlice, this.repeat, this.matchTextDirection, this.scale);
     }
     toString() {
-      return object.objectRuntimeType(this, "BorderSide") + "(" + dart.str(this.color) + ", " + this.width[$toStringAsFixed](1) + ", " + dart.str(this.style) + ")";
-    }
-  };
-  (borders$.BorderSide.new = function(opts) {
-    let color = opts && 'color' in opts ? opts.color : C[3] || CT.C3;
-    let width = opts && 'width' in opts ? opts.width : 1;
-    let style = opts && 'style' in opts ? opts.style : C[1] || CT.C1;
-    this[color$] = color;
-    this[width$] = width;
-    this[style$] = style;
-    if (!(color !== null)) dart.assertFailed(null, I[1], 69, 15, "color != null");
-    if (!(width !== null)) dart.assertFailed(null, I[1], 70, 15, "width != null");
-    if (!(width >= 0.0)) dart.assertFailed(null, I[1], 71, 15, "width >= 0.0");
-    if (!(style !== null)) dart.assertFailed(null, I[1], 72, 15, "style != null");
-    ;
-  }).prototype = borders$.BorderSide.prototype;
-  dart.addTypeTests(borders$.BorderSide);
-  dart.addTypeCaches(borders$.BorderSide);
-  dart.setMethodSignature(borders$.BorderSide, () => ({
-    __proto__: dart.getMethods(borders$.BorderSide.__proto__),
-    copyWith: dart.fnType(borders$.BorderSide, [], {color: dart.nullable(ui.Color), style: dart.nullable(borders$.BorderStyle), width: dart.nullable(core.double)}, {}),
-    scale: dart.fnType(borders$.BorderSide, [core.double]),
-    toPaint: dart.fnType(ui.Paint, [])
-  }));
-  dart.setLibraryUri(borders$.BorderSide, I[0]);
-  dart.setFieldSignature(borders$.BorderSide, () => ({
-    __proto__: dart.getFields(borders$.BorderSide.__proto__),
-    color: dart.finalFieldType(ui.Color),
-    width: dart.finalFieldType(core.double),
-    style: dart.finalFieldType(borders$.BorderStyle)
-  }));
-  dart.defineExtensionMethods(borders$.BorderSide, ['_equals', 'toString']);
-  dart.defineExtensionAccessors(borders$.BorderSide, ['hashCode']);
-  dart.defineLazy(borders$.BorderSide, {
-    /*borders$.BorderSide.none*/get none() {
-      return C[5] || CT.C5;
-    }
-  }, false);
-  borders$.ShapeBorder = class ShapeBorder extends core.Object {
-    add(other, opts) {
-      let reversed = opts && 'reversed' in opts ? opts.reversed : false;
-      return null;
-    }
-    ['+'](other) {
-      let t0, t0$;
-      t0$ = (t0 = this.add(other), t0 == null ? other.add(this, {reversed: true}) : t0);
-      return t0$ == null ? new borders$._CompoundBorder.new(T.JSArrayOfShapeBorder().of([other, this])) : t0$;
-    }
-    lerpFrom(a, t) {
-      if (a == null) return this.scale(t);
-      return null;
-    }
-    lerpTo(b, t) {
-      if (b == null) return this.scale(1.0 - t);
-      return null;
-    }
-    static lerp(a, b, t) {
-      let t0;
-      if (!(t !== null)) dart.assertFailed(null, I[1], 429, 12, "t != null");
-      let result = null;
-      if (b != null) result = b.lerpFrom(a, t);
-      if (result == null && a != null) result = a.lerpTo(b, t);
-      t0 = result;
-      return t0 == null ? t < 0.5 ? a : b : t0;
-    }
-    toString() {
-      return object.objectRuntimeType(this, "ShapeBorder") + "()";
-    }
-  };
-  (borders$.ShapeBorder.new = function() {
-    ;
-  }).prototype = borders$.ShapeBorder.prototype;
-  dart.addTypeTests(borders$.ShapeBorder);
-  dart.addTypeCaches(borders$.ShapeBorder);
-  dart.setMethodSignature(borders$.ShapeBorder, () => ({
-    __proto__: dart.getMethods(borders$.ShapeBorder.__proto__),
-    add: dart.fnType(dart.nullable(borders$.ShapeBorder), [borders$.ShapeBorder], {reversed: core.bool}, {}),
-    '+': dart.fnType(borders$.ShapeBorder, [borders$.ShapeBorder]),
-    lerpFrom: dart.fnType(dart.nullable(borders$.ShapeBorder), [dart.nullable(borders$.ShapeBorder), core.double]),
-    lerpTo: dart.fnType(dart.nullable(borders$.ShapeBorder), [dart.nullable(borders$.ShapeBorder), core.double])
-  }));
-  dart.setLibraryUri(borders$.ShapeBorder, I[0]);
-  dart.defineExtensionMethods(borders$.ShapeBorder, ['toString']);
-  var side$ = dart.privateName(borders$, "OutlinedBorder.side");
-  borders$.OutlinedBorder = class OutlinedBorder extends borders$.ShapeBorder {
-    get side() {
-      return this[side$];
-    }
-    set side(value) {
-      super.side = value;
-    }
-  };
-  (borders$.OutlinedBorder.new = function(opts) {
-    let side = opts && 'side' in opts ? opts.side : C[5] || CT.C5;
-    this[side$] = side;
-    if (!(side !== null)) dart.assertFailed(null, I[1], 502, 66, "side != null");
-    borders$.OutlinedBorder.__proto__.new.call(this);
-    ;
-  }).prototype = borders$.OutlinedBorder.prototype;
-  dart.addTypeTests(borders$.OutlinedBorder);
-  dart.addTypeCaches(borders$.OutlinedBorder);
-  dart.setLibraryUri(borders$.OutlinedBorder, I[0]);
-  dart.setFieldSignature(borders$.OutlinedBorder, () => ({
-    __proto__: dart.getFields(borders$.OutlinedBorder.__proto__),
-    side: dart.finalFieldType(borders$.BorderSide)
-  }));
-  borders$._CompoundBorder = class _CompoundBorder extends borders$.ShapeBorder {
-    get dimensions() {
-      return this.borders[$fold](edge_insets.EdgeInsetsGeometry, edge_insets.EdgeInsets.zero, dart.fn((previousValue, border) => previousValue.add(border.dimensions), T.EdgeInsetsGeometryAndShapeBorderToEdgeInsetsGeometry()));
-    }
-    add(other, opts) {
-      let t0;
-      let reversed = opts && 'reversed' in opts ? opts.reversed : false;
-      if (!borders$._CompoundBorder.is(other)) {
-        let ours = reversed ? this.borders[$last] : this.borders[$first];
-        let merged = (t0 = ours.add(other, {reversed: reversed}), t0 == null ? other.add(ours, {reversed: !reversed}) : t0);
-        if (merged != null) {
-          let result = (() => {
-            let t0 = T.ListOfShapeBorder().of(this.borders);
-            return t0;
-          })();
-          result[$_set](reversed ? result[$length] - 1 : 0, merged);
-          return new borders$._CompoundBorder.new(result);
-        }
-      }
-      let mergedBorders = (() => {
-        let t1 = T.JSArrayOfShapeBorder().of([]);
-        if (reversed) t1[$addAll](this.borders);
-        if (borders$._CompoundBorder.is(other))
-          t1[$addAll](other.borders);
-        else
-          t1[$add](other);
-        if (!reversed) t1[$addAll](this.borders);
-        return t1;
+      let properties = (() => {
+        let t0 = T.JSArrayOfString().of([dart.str(this.image)]);
+        if (this.colorFilter != null) t0[$add](dart.str(this.colorFilter));
+        if (this.fit != null && !(this.fit === box_fit.BoxFit.fill && this.centerSlice != null) && !(this.fit === box_fit.BoxFit.scaleDown && this.centerSlice == null)) t0[$add](dart.str(this.fit));
+        t0[$add](dart.str(this.alignment));
+        if (this.centerSlice != null) t0[$add]("centerSlice: " + dart.str(this.centerSlice));
+        if (this.repeat !== decoration_image.ImageRepeat.noRepeat) t0[$add](dart.str(this.repeat));
+        if (this.matchTextDirection) t0[$add]("match text direction");
+        t0[$add]("scale: " + dart.str(this.scale));
+        return t0;
       })();
-      return new borders$._CompoundBorder.new(mergedBorders);
+      return object.objectRuntimeType(this, "DecorationImage") + "(" + properties[$join](", ") + ")";
     }
-    scale(t) {
-      return new borders$._CompoundBorder.new(this.borders[$map](borders$.ShapeBorder, dart.fn(border => border.scale(t), T.ShapeBorderToShapeBorder()))[$toList]());
-    }
-    lerpFrom(a, t) {
-      return borders$._CompoundBorder.lerp(a, this, t);
-    }
-    lerpTo(b, t) {
-      return borders$._CompoundBorder.lerp(this, b, t);
-    }
-    static lerp(a, b, t) {
-      let t2;
-      if (!(t !== null)) dart.assertFailed(null, I[1], 584, 12, "t != null");
-      if (!(borders$._CompoundBorder.is(a) || borders$._CompoundBorder.is(b))) dart.assertFailed(null, I[1], 585, 12, "a is _CompoundBorder || b is _CompoundBorder");
-      let aList = borders$._CompoundBorder.is(a) ? a.borders : T.JSArrayOfShapeBorderN().of([a]);
-      let bList = borders$._CompoundBorder.is(b) ? b.borders : T.JSArrayOfShapeBorderN().of([b]);
-      let results = T.JSArrayOfShapeBorder().of([]);
-      let length = math.max(core.int, aList[$length], bList[$length]);
-      for (let index = 0; index < length; index = index + 1) {
-        let localA = index < aList[$length] ? aList[$_get](index) : null;
-        let localB = index < bList[$length] ? bList[$_get](index) : null;
-        if (localA != null && localB != null) {
-          let localResult = (t2 = localA.lerpTo(localB, t), t2 == null ? localB.lerpFrom(localA, t) : t2);
-          if (localResult != null) {
-            results[$add](localResult);
-            continue;
+  };
+  (decoration_image.DecorationImage.new = function(opts) {
+    let image = opts && 'image' in opts ? opts.image : null;
+    let onError = opts && 'onError' in opts ? opts.onError : null;
+    let colorFilter = opts && 'colorFilter' in opts ? opts.colorFilter : null;
+    let fit = opts && 'fit' in opts ? opts.fit : null;
+    let alignment = opts && 'alignment' in opts ? opts.alignment : C[5] || CT.C5;
+    let centerSlice = opts && 'centerSlice' in opts ? opts.centerSlice : null;
+    let repeat = opts && 'repeat' in opts ? opts.repeat : C[3] || CT.C3;
+    let matchTextDirection = opts && 'matchTextDirection' in opts ? opts.matchTextDirection : false;
+    let scale = opts && 'scale' in opts ? opts.scale : 1;
+    this[image$] = image;
+    this[onError$] = onError;
+    this[colorFilter$] = colorFilter;
+    this[fit$] = fit;
+    this[alignment$] = alignment;
+    this[centerSlice$] = centerSlice;
+    this[repeat$] = repeat;
+    this[matchTextDirection$] = matchTextDirection;
+    this[scale$] = scale;
+    if (!(image !== null)) dart.assertFailed(null, I[1], 55, 15, "image != null");
+    if (!(alignment !== null)) dart.assertFailed(null, I[1], 56, 15, "alignment != null");
+    if (!(repeat !== null)) dart.assertFailed(null, I[1], 57, 15, "repeat != null");
+    if (!(matchTextDirection !== null)) dart.assertFailed(null, I[1], 58, 15, "matchTextDirection != null");
+    if (!(scale !== null)) dart.assertFailed(null, I[1], 59, 15, "scale != null");
+    ;
+  }).prototype = decoration_image.DecorationImage.prototype;
+  dart.addTypeTests(decoration_image.DecorationImage);
+  dart.addTypeCaches(decoration_image.DecorationImage);
+  dart.setMethodSignature(decoration_image.DecorationImage, () => ({
+    __proto__: dart.getMethods(decoration_image.DecorationImage.__proto__),
+    createPainter: dart.fnType(decoration_image.DecorationImagePainter, [dart.fnType(dart.void, [])])
+  }));
+  dart.setLibraryUri(decoration_image.DecorationImage, I[0]);
+  dart.setFieldSignature(decoration_image.DecorationImage, () => ({
+    __proto__: dart.getFields(decoration_image.DecorationImage.__proto__),
+    image: dart.finalFieldType(image_provider.ImageProvider$(core.Object)),
+    onError: dart.finalFieldType(dart.nullable(dart.fnType(dart.void, [core.Object, dart.nullable(core.StackTrace)]))),
+    colorFilter: dart.finalFieldType(dart.nullable(ui.ColorFilter)),
+    fit: dart.finalFieldType(dart.nullable(box_fit.BoxFit)),
+    alignment: dart.finalFieldType(alignment.AlignmentGeometry),
+    centerSlice: dart.finalFieldType(dart.nullable(ui.Rect)),
+    repeat: dart.finalFieldType(decoration_image.ImageRepeat),
+    matchTextDirection: dart.finalFieldType(core.bool),
+    scale: dart.finalFieldType(core.double)
+  }));
+  dart.defineExtensionMethods(decoration_image.DecorationImage, ['_equals', 'toString']);
+  dart.defineExtensionAccessors(decoration_image.DecorationImage, ['hashCode']);
+  var _imageStream = dart.privateName(decoration_image, "_imageStream");
+  var _image = dart.privateName(decoration_image, "_image");
+  var _details$ = dart.privateName(decoration_image, "_details");
+  var _onChanged$ = dart.privateName(decoration_image, "_onChanged");
+  var _handleImage = dart.privateName(decoration_image, "_handleImage");
+  decoration_image.DecorationImagePainter = class DecorationImagePainter extends core.Object {
+    paint(canvas, rect, clipPath, configuration) {
+      let t1, t1$;
+      if (!(canvas !== null)) dart.assertFailed(null, I[1], 232, 12, "canvas != null");
+      if (!(rect !== null)) dart.assertFailed(null, I[1], 233, 12, "rect != null");
+      if (!(configuration !== null)) dart.assertFailed(null, I[1], 234, 12, "configuration != null");
+      let flipHorizontally = false;
+      if (this[_details$].matchTextDirection) {
+        if (!dart.fn(() => {
+          if (configuration.textDirection == null) {
+            dart.throw(new assertions.FlutterError.fromParts(T.JSArrayOfDiagnosticsNode().of([new assertions.ErrorSummary.new("DecorationImage.matchTextDirection can only be used when a TextDirection is available."), new assertions.ErrorDescription.new("When DecorationImagePainter.paint() was called, there was no text direction provided " + "in the ImageConfiguration object to match."), new (T.DiagnosticsPropertyOfDecorationImage()).new("The DecorationImage was", this[_details$], {style: diagnostics.DiagnosticsTreeStyle.errorProperty}), new (T.DiagnosticsPropertyOfImageConfiguration()).new("The ImageConfiguration was", configuration, {style: diagnostics.DiagnosticsTreeStyle.errorProperty})])));
           }
-        }
-        if (localB != null) results[$add](localB.scale(t));
-        if (localA != null) results[$add](localA.scale(1.0 - t));
+          return true;
+        }, T.VoidTobool())()) dart.assertFailed(null, I[1], 238, 14, "() {\r\n        // We check this first so that the assert will fire immediately, not just\r\n        // when the image is ready.\r\n        if (configuration.textDirection == null) {\r\n          throw FlutterError.fromParts(<DiagnosticsNode>[\r\n            ErrorSummary('DecorationImage.matchTextDirection can only be used when a TextDirection is available.'),\r\n            ErrorDescription(\r\n              'When DecorationImagePainter.paint() was called, there was no text direction provided '\r\n              'in the ImageConfiguration object to match.',\r\n            ),\r\n            DiagnosticsProperty<DecorationImage>('The DecorationImage was', _details, style: DiagnosticsTreeStyle.errorProperty),\r\n            DiagnosticsProperty<ImageConfiguration>('The ImageConfiguration was', configuration, style: DiagnosticsTreeStyle.errorProperty),\r\n          ]);\r\n        }\r\n        return true;\r\n      }()");
+        if (configuration.textDirection === ui.TextDirection.rtl) flipHorizontally = true;
       }
-      return new borders$._CompoundBorder.new(results);
-    }
-    getInnerPath(rect, opts) {
-      let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
-      for (let index = 0; index < this.borders[$length] - 1; index = index + 1)
-        rect = this.borders[$_get](index).dimensions.resolve(textDirection).deflateRect(rect);
-      return this.borders[$last].getInnerPath(rect, {textDirection: textDirection});
-    }
-    getOuterPath(rect, opts) {
-      let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
-      return this.borders[$first].getOuterPath(rect, {textDirection: textDirection});
-    }
-    paint(canvas, rect, opts) {
-      let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
-      for (let border of this.borders) {
-        border.paint(canvas, rect, {textDirection: textDirection});
-        rect = border.dimensions.resolve(textDirection).deflateRect(rect);
+      let newImageStream = this[_details$].image.resolve(configuration);
+      if (!newImageStream.key[$_equals]((t1 = this[_imageStream], t1 == null ? null : t1.key))) {
+        let listener = new image_stream.ImageStreamListener.new(dart.bind(this, _handleImage), {onError: this[_details$].onError});
+        t1$ = this[_imageStream];
+        t1$ == null ? null : t1$.removeListener(listener);
+        this[_imageStream] = newImageStream;
+        dart.nullCheck(this[_imageStream]).addListener(listener);
       }
+      if (this[_image] == null) return;
+      if (clipPath != null) {
+        canvas.save();
+        canvas.clipPath(clipPath);
+      }
+      decoration_image.paintImage({canvas: canvas, rect: rect, image: dart.nullCheck(this[_image]).image, debugImageLabel: dart.nullCheck(this[_image]).debugLabel, scale: this[_details$].scale * dart.nullCheck(this[_image]).scale, colorFilter: this[_details$].colorFilter, fit: this[_details$].fit, alignment: this[_details$].alignment.resolve(configuration.textDirection), centerSlice: this[_details$].centerSlice, repeat: this[_details$].repeat, flipHorizontally: flipHorizontally, filterQuality: ui.FilterQuality.low});
+      if (clipPath != null) canvas.restore();
     }
-    _equals(other) {
-      if (other == null) return false;
-      if (this === other) return true;
-      if (!other[$runtimeType]._equals(this[$runtimeType])) return false;
-      return borders$._CompoundBorder.is(other) && collections.listEquals(borders$.ShapeBorder, other.borders, this.borders);
+    [_handleImage](value, synchronousCall) {
+      let t1;
+      if (dart.equals(this[_image], value)) return;
+      if (this[_image] != null && dart.nullCheck(this[_image]).isCloneOf(value)) {
+        value.dispose();
+        return;
+      }
+      t1 = this[_image];
+      t1 == null ? null : t1.dispose();
+      this[_image] = value;
+      if (!(this[_onChanged$] !== null)) dart.assertFailed(null, I[1], 304, 12, "_onChanged != null");
+      if (!synchronousCall) this[_onChanged$]();
     }
-    get hashCode() {
-      return ui.hashList(this.borders);
+    dispose() {
+      let t1, t1$;
+      t1 = this[_imageStream];
+      t1 == null ? null : t1.removeListener(new image_stream.ImageStreamListener.new(dart.bind(this, _handleImage), {onError: this[_details$].onError}));
+      t1$ = this[_image];
+      t1$ == null ? null : t1$.dispose();
+      this[_image] = null;
     }
     toString() {
-      return this.borders[$reversed][$map](core.String, dart.fn(border => border.toString(), T.ShapeBorderToString()))[$join](" + ");
+      return object.objectRuntimeType(this, "DecorationImagePainter") + "(stream: " + dart.str(this[_imageStream]) + ", image: " + dart.str(this[_image]) + ") for " + dart.str(this[_details$]);
     }
   };
-  (borders$._CompoundBorder.new = function(borders) {
-    this.borders = borders;
-    if (!(borders !== null)) dart.assertFailed(null, I[1], 520, 14, "borders != null");
-    if (!(borders[$length] >= 2)) dart.assertFailed(null, I[1], 521, 14, "borders.length >= 2");
-    if (!!borders[$any](dart.fn(border => borders$._CompoundBorder.is(border), T.ShapeBorderTobool()))) dart.assertFailed(null, I[1], 522, 14, "!borders.any((ShapeBorder border) => border is _CompoundBorder)");
-    borders$._CompoundBorder.__proto__.new.call(this);
+  (decoration_image.DecorationImagePainter.__ = function(_details, _onChanged) {
+    this[_imageStream] = null;
+    this[_image] = null;
+    this[_details$] = _details;
+    this[_onChanged$] = _onChanged;
+    if (!(_details !== null)) dart.assertFailed(null, I[1], 209, 69, "_details != null");
     ;
-  }).prototype = borders$._CompoundBorder.prototype;
-  dart.addTypeTests(borders$._CompoundBorder);
-  dart.addTypeCaches(borders$._CompoundBorder);
-  dart.setMethodSignature(borders$._CompoundBorder, () => ({
-    __proto__: dart.getMethods(borders$._CompoundBorder.__proto__),
-    add: dart.fnType(borders$.ShapeBorder, [borders$.ShapeBorder], {reversed: core.bool}, {}),
-    scale: dart.fnType(borders$.ShapeBorder, [core.double]),
-    getInnerPath: dart.fnType(ui.Path, [ui.Rect], {textDirection: dart.nullable(ui.TextDirection)}, {}),
-    getOuterPath: dart.fnType(ui.Path, [ui.Rect], {textDirection: dart.nullable(ui.TextDirection)}, {}),
-    paint: dart.fnType(dart.void, [ui.Canvas, ui.Rect], {textDirection: dart.nullable(ui.TextDirection)}, {})
+  }).prototype = decoration_image.DecorationImagePainter.prototype;
+  dart.addTypeTests(decoration_image.DecorationImagePainter);
+  dart.addTypeCaches(decoration_image.DecorationImagePainter);
+  dart.setMethodSignature(decoration_image.DecorationImagePainter, () => ({
+    __proto__: dart.getMethods(decoration_image.DecorationImagePainter.__proto__),
+    paint: dart.fnType(dart.void, [ui.Canvas, ui.Rect, dart.nullable(ui.Path), image_provider.ImageConfiguration]),
+    [_handleImage]: dart.fnType(dart.void, [image_stream.ImageInfo, core.bool]),
+    dispose: dart.fnType(dart.void, [])
   }));
-  dart.setGetterSignature(borders$._CompoundBorder, () => ({
-    __proto__: dart.getGetters(borders$._CompoundBorder.__proto__),
-    dimensions: edge_insets.EdgeInsetsGeometry
+  dart.setLibraryUri(decoration_image.DecorationImagePainter, I[0]);
+  dart.setFieldSignature(decoration_image.DecorationImagePainter, () => ({
+    __proto__: dart.getFields(decoration_image.DecorationImagePainter.__proto__),
+    [_details$]: dart.finalFieldType(decoration_image.DecorationImage),
+    [_onChanged$]: dart.finalFieldType(dart.fnType(dart.void, [])),
+    [_imageStream]: dart.fieldType(dart.nullable(image_stream.ImageStream)),
+    [_image]: dart.fieldType(dart.nullable(image_stream.ImageInfo))
   }));
-  dart.setLibraryUri(borders$._CompoundBorder, I[0]);
-  dart.setFieldSignature(borders$._CompoundBorder, () => ({
-    __proto__: dart.getFields(borders$._CompoundBorder.__proto__),
-    borders: dart.finalFieldType(core.List$(borders$.ShapeBorder))
-  }));
-  dart.defineExtensionMethods(borders$._CompoundBorder, ['_equals', 'toString']);
-  dart.defineExtensionAccessors(borders$._CompoundBorder, ['hashCode']);
-  borders$.paintBorder = function paintBorder(canvas, rect, opts) {
-    let t2;
-    let top = opts && 'top' in opts ? opts.top : C[5] || CT.C5;
-    let right = opts && 'right' in opts ? opts.right : C[5] || CT.C5;
-    let bottom = opts && 'bottom' in opts ? opts.bottom : C[5] || CT.C5;
-    let left = opts && 'left' in opts ? opts.left : C[5] || CT.C5;
-    if (!(canvas !== null)) dart.assertFailed(null, I[1], 680, 10, "canvas != null");
-    if (!(rect !== null)) dart.assertFailed(null, I[1], 681, 10, "rect != null");
-    if (!(top !== null)) dart.assertFailed(null, I[1], 682, 10, "top != null");
-    if (!(right !== null)) dart.assertFailed(null, I[1], 683, 10, "right != null");
-    if (!(bottom !== null)) dart.assertFailed(null, I[1], 684, 10, "bottom != null");
-    if (!(left !== null)) dart.assertFailed(null, I[1], 685, 10, "left != null");
-    let paint = (t2 = ui.Paint.new(), (() => {
-      t2.strokeWidth = 0.0;
-      return t2;
+  dart.defineExtensionMethods(decoration_image.DecorationImagePainter, ['toString']);
+  var _name = dart.privateName(ui, "_name");
+  var _CkMatrixColorFilter_matrix = dart.privateName(_engine, "_CkMatrixColorFilter.matrix");
+  decoration_image.debugFlushLastFrameImageSizeInfo = function debugFlushLastFrameImageSizeInfo() {
+    if (!dart.fn(() => {
+      decoration_image._lastFrameImageSizeInfo = T.LinkedHashSetOfImageSizeInfo().new();
+      return true;
+    }, T.VoidTobool())()) dart.assertFailed(null, I[1], 343, 10, "() {\r\n    _lastFrameImageSizeInfo = <ImageSizeInfo>{};\r\n    return true;\r\n  }()");
+  };
+  decoration_image.paintImage = function paintImage(opts) {
+    let t1, t1$, t1$0, t1$1, t1$2;
+    let canvas = opts && 'canvas' in opts ? opts.canvas : null;
+    let rect = opts && 'rect' in opts ? opts.rect : null;
+    let image = opts && 'image' in opts ? opts.image : null;
+    let debugImageLabel = opts && 'debugImageLabel' in opts ? opts.debugImageLabel : null;
+    let scale = opts && 'scale' in opts ? opts.scale : 1;
+    let colorFilter = opts && 'colorFilter' in opts ? opts.colorFilter : null;
+    let fit = opts && 'fit' in opts ? opts.fit : null;
+    let alignment = opts && 'alignment' in opts ? opts.alignment : C[5] || CT.C5;
+    let centerSlice = opts && 'centerSlice' in opts ? opts.centerSlice : null;
+    let repeat = opts && 'repeat' in opts ? opts.repeat : C[3] || CT.C3;
+    let flipHorizontally = opts && 'flipHorizontally' in opts ? opts.flipHorizontally : false;
+    let invertColors = opts && 'invertColors' in opts ? opts.invertColors : false;
+    let filterQuality = opts && 'filterQuality' in opts ? opts.filterQuality : C[6] || CT.C6;
+    let isAntiAlias = opts && 'isAntiAlias' in opts ? opts.isAntiAlias : false;
+    if (!(canvas !== null)) dart.assertFailed(null, I[1], 433, 10, "canvas != null");
+    if (!(image !== null)) dart.assertFailed(null, I[1], 434, 10, "image != null");
+    if (!(alignment !== null)) dart.assertFailed(null, I[1], 435, 10, "alignment != null");
+    if (!(repeat !== null)) dart.assertFailed(null, I[1], 436, 10, "repeat != null");
+    if (!(flipHorizontally !== null)) dart.assertFailed(null, I[1], 437, 10, "flipHorizontally != null");
+    if (!(isAntiAlias !== null)) dart.assertFailed(null, I[1], 438, 10, "isAntiAlias != null");
+    if (!dart.test((t1$ = (t1 = image.debugGetOpenHandleStackTraces(), t1 == null ? null : t1[$isNotEmpty]), t1$ == null ? true : t1$))) dart.assertFailed("Cannot paint an image that is disposed.\n" + "The caller of paintImage is expected to wait to dispose the image until " + "after painting has completed.", I[1], 440, 5, "image.debugGetOpenHandleStackTraces()?.isNotEmpty ?? true");
+    if (rect.isEmpty) return;
+    let outputSize = rect.size;
+    let inputSize = new ui.Size.new(image.width[$toDouble](), image.height[$toDouble]());
+    let sliceBorder = null;
+    if (centerSlice != null) {
+      sliceBorder = ui.Offset.as(inputSize['/'](scale)['-'](centerSlice.size));
+      outputSize = ui.Size.as(outputSize['-'](sliceBorder));
+      inputSize = ui.Size.as(inputSize['-'](sliceBorder['*'](scale)));
+    }
+    fit == null ? fit = centerSlice == null ? box_fit.BoxFit.scaleDown : box_fit.BoxFit.fill : null;
+    if (!(centerSlice == null || fit !== box_fit.BoxFit.none && fit !== box_fit.BoxFit.cover)) dart.assertFailed(null, I[1], 456, 10, "centerSlice == null || (fit != BoxFit.none && fit != BoxFit.cover)");
+    let fittedSizes = box_fit.applyBoxFit(fit, inputSize['/'](scale), outputSize);
+    let sourceSize = fittedSizes.source['*'](scale);
+    let destinationSize = fittedSizes.destination;
+    if (centerSlice != null) {
+      outputSize = outputSize['+'](dart.nullCheck(sliceBorder));
+      destinationSize = destinationSize['+'](sliceBorder);
+      if (!sourceSize._equals(inputSize)) dart.assertFailed("centerSlice was used with a BoxFit that does not guarantee that the image is fully visible.", I[1], 465, 12, "sourceSize == inputSize");
+    }
+    if (repeat !== decoration_image.ImageRepeat.noRepeat && destinationSize._equals(outputSize)) {
+      repeat = decoration_image.ImageRepeat.noRepeat;
+    }
+    let paint = (t1$0 = ui.Paint.new(), (() => {
+      t1$0.isAntiAlias = isAntiAlias;
+      return t1$0;
     })());
-    let path = ui.Path.new();
-    switch (top.style) {
-      case C[1] || CT.C1:
-      {
-        paint.color = top.color;
-        path.reset();
-        path.moveTo(rect.left, rect.top);
-        path.lineTo(rect.right, rect.top);
-        if (top.width === 0.0) {
-          paint.style = ui.PaintingStyle.stroke;
-        } else {
-          paint.style = ui.PaintingStyle.fill;
-          path.lineTo(rect.right - right.width, rect.top + top.width);
-          path.lineTo(rect.left + left.width, rect.top + top.width);
+    if (colorFilter != null) paint.colorFilter = colorFilter;
+    paint.filterQuality = filterQuality;
+    paint.invertColors = invertColors;
+    let halfWidthDelta = (outputSize.width - destinationSize.width) / 2.0;
+    let halfHeightDelta = (outputSize.height - destinationSize.height) / 2.0;
+    let dx = halfWidthDelta + (flipHorizontally ? -alignment.x : alignment.x) * halfWidthDelta;
+    let dy = halfHeightDelta + alignment.y * halfHeightDelta;
+    let destinationPosition = rect.topLeft.translate(dx, dy);
+    let destinationRect = destinationPosition['&'](destinationSize);
+    let invertedCanvas = false;
+    if (!false) {
+      let sizeInfo = new debug.ImageSizeInfo.new({source: (t1$1 = debugImageLabel, t1$1 == null ? "<Unknown Image(" + dart.str(image.width) + "×" + dart.str(image.height) + ")>" : t1$1), imageSize: new ui.Size.new(image.width[$toDouble](), image.height[$toDouble]()), displaySize: outputSize});
+      if (!dart.fn(() => {
+        let t1;
+        if (debug.debugInvertOversizedImages && sizeInfo.decodedSizeInBytes > sizeInfo.displaySizeInBytes + debug.debugImageOverheadAllowance) {
+          let overheadInKilobytes = ((sizeInfo.decodedSizeInBytes - sizeInfo.displaySizeInBytes) / 1024)[$truncate]();
+          let outputWidth = outputSize.width[$toInt]();
+          let outputHeight = outputSize.height[$toInt]();
+          assertions.FlutterError.reportError(new assertions.FlutterErrorDetails.new({exception: "Image " + dart.str(debugImageLabel) + " has a display size of " + dart.str(outputWidth) + "×" + dart.str(outputHeight) + " but a decode size of " + dart.str(image.width) + "×" + dart.str(image.height) + ", which uses an additional " + dart.str(overheadInKilobytes) + "KB.\n\n" + "Consider resizing the asset ahead of time, supplying a cacheWidth " + "parameter of " + dart.str(outputWidth) + ", a cacheHeight parameter of " + dart.str(outputHeight) + ", or using a ResizeImage.", library: "painting library", context: new assertions.ErrorDescription.new("while painting an image")}));
+          canvas.saveLayer(destinationRect, (t1 = ui.Paint.new(), (() => {
+            t1.colorFilter = C[7] || CT.C7;
+            return t1;
+          })()));
+          let dy = -(rect.top + rect.height / 2.0);
+          canvas.translate(0.0, -dy);
+          canvas.scale(1.0, -1.0);
+          canvas.translate(0.0, dy);
+          invertedCanvas = true;
         }
-        canvas.drawPath(path, paint);
-        break;
-      }
-      case C[0] || CT.C0:
-      {
-        break;
+        return true;
+      }, T.VoidTobool())()) dart.assertFailed(null, I[1], 495, 12, "() {\r\n      if (debugInvertOversizedImages &&\r\n          sizeInfo.decodedSizeInBytes > sizeInfo.displaySizeInBytes + debugImageOverheadAllowance) {\r\n        final int overheadInKilobytes = (sizeInfo.decodedSizeInBytes - sizeInfo.displaySizeInBytes) ~/ 1024;\r\n        final int outputWidth = outputSize.width.toInt();\r\n        final int outputHeight = outputSize.height.toInt();\r\n        FlutterError.reportError(FlutterErrorDetails(\r\n          exception: 'Image $debugImageLabel has a display size of '\r\n            '$outputWidth×$outputHeight but a decode size of '\r\n            '${image.width}×${image.height}, which uses an additional '\r\n            '${overheadInKilobytes}KB.\\n\\n'\r\n            'Consider resizing the asset ahead of time, supplying a cacheWidth '\r\n            'parameter of $outputWidth, a cacheHeight parameter of '\r\n            '$outputHeight, or using a ResizeImage.',\r\n          library: 'painting library',\r\n          context: ErrorDescription('while painting an image'),\r\n        ));\r\n        // Invert the colors of the canvas.\r\n        canvas.saveLayer(\r\n          destinationRect,\r\n          Paint()..colorFilter = const ColorFilter.matrix(<double>[\r\n            -1,  0,  0, 0, 255,\r\n             0, -1,  0, 0, 255,\r\n             0,  0, -1, 0, 255,\r\n             0,  0,  0, 1,   0,\r\n          ]),\r\n        );\r\n        // Flip the canvas vertically.\r\n        final double dy = -(rect.top + rect.height / 2.0);\r\n        canvas.translate(0.0, -dy);\r\n        canvas.scale(1.0, -1.0);\r\n        canvas.translate(0.0, dy);\r\n        invertedCanvas = true;\r\n      }\r\n      return true;\r\n    }()");
+      if (!decoration_image._lastFrameImageSizeInfo.contains(sizeInfo)) {
+        let existingSizeInfo = decoration_image._pendingImageSizeInfo[$_get](sizeInfo.source);
+        if (existingSizeInfo == null || existingSizeInfo.displaySizeInBytes < sizeInfo.displaySizeInBytes) {
+          decoration_image._pendingImageSizeInfo[$_set](dart.nullCheck(sizeInfo.source), sizeInfo);
+        }
+        t1$2 = debug.debugOnPaintImage;
+        t1$2 == null ? null : t1$2(sizeInfo);
+        dart.nullCheck(binding.SchedulerBinding.instance).addPostFrameCallback(dart.fn(timeStamp => {
+          decoration_image._lastFrameImageSizeInfo = decoration_image._pendingImageSizeInfo[$values][$toSet]();
+          if (decoration_image._pendingImageSizeInfo[$isEmpty]) {
+            return;
+          }
+          developer.postEvent("Flutter.ImageSizesForFrame", (() => {
+            let t1 = new (T.IdentityMapOfString$Object()).new();
+            for (let imageSizeInfo of decoration_image._pendingImageSizeInfo[$values])
+              t1[$_set](dart.nullCheck(imageSizeInfo.source), imageSizeInfo.toJson());
+            return t1;
+          })());
+          decoration_image._pendingImageSizeInfo = new (T.IdentityMapOfString$ImageSizeInfo()).new();
+        }, T.DurationTovoid()));
       }
     }
-    switch (right.style) {
-      case C[1] || CT.C1:
-      {
-        paint.color = right.color;
-        path.reset();
-        path.moveTo(rect.right, rect.top);
-        path.lineTo(rect.right, rect.bottom);
-        if (right.width === 0.0) {
-          paint.style = ui.PaintingStyle.stroke;
-        } else {
-          paint.style = ui.PaintingStyle.fill;
-          path.lineTo(rect.right - right.width, rect.bottom - bottom.width);
-          path.lineTo(rect.right - right.width, rect.top + top.width);
-        }
-        canvas.drawPath(path, paint);
-        break;
+    let needSave = centerSlice != null || repeat !== decoration_image.ImageRepeat.noRepeat || flipHorizontally;
+    if (needSave) canvas.save();
+    if (repeat !== decoration_image.ImageRepeat.noRepeat) canvas.clipRect(rect);
+    if (flipHorizontally) {
+      let dx = -(rect.left + rect.width / 2.0);
+      canvas.translate(-dx, 0.0);
+      canvas.scale(-1.0, 1.0);
+      canvas.translate(dx, 0.0);
+    }
+    if (centerSlice == null) {
+      let sourceRect = alignment.inscribe(sourceSize, ui.Offset.zero['&'](inputSize));
+      if (repeat === decoration_image.ImageRepeat.noRepeat) {
+        canvas.drawImageRect(image, sourceRect, destinationRect, paint);
+      } else {
+        for (let tileRect of decoration_image._generateImageTileRects(rect, destinationRect, repeat))
+          canvas.drawImageRect(image, sourceRect, tileRect, paint);
       }
-      case C[0] || CT.C0:
-      {
-        break;
+    } else {
+      canvas.scale(1 / scale);
+      if (repeat === decoration_image.ImageRepeat.noRepeat) {
+        canvas.drawImageNine(image, decoration_image._scaleRect(centerSlice, scale), decoration_image._scaleRect(destinationRect, scale), paint);
+      } else {
+        for (let tileRect of decoration_image._generateImageTileRects(rect, destinationRect, repeat))
+          canvas.drawImageNine(image, decoration_image._scaleRect(centerSlice, scale), decoration_image._scaleRect(tileRect, scale), paint);
       }
     }
-    switch (bottom.style) {
-      case C[1] || CT.C1:
-      {
-        paint.color = bottom.color;
-        path.reset();
-        path.moveTo(rect.right, rect.bottom);
-        path.lineTo(rect.left, rect.bottom);
-        if (bottom.width === 0.0) {
-          paint.style = ui.PaintingStyle.stroke;
-        } else {
-          paint.style = ui.PaintingStyle.fill;
-          path.lineTo(rect.left + left.width, rect.bottom - bottom.width);
-          path.lineTo(rect.right - right.width, rect.bottom - bottom.width);
-        }
-        canvas.drawPath(path, paint);
-        break;
-      }
-      case C[0] || CT.C0:
-      {
-        break;
-      }
-    }
-    switch (left.style) {
-      case C[1] || CT.C1:
-      {
-        paint.color = left.color;
-        path.reset();
-        path.moveTo(rect.left, rect.bottom);
-        path.lineTo(rect.left, rect.top);
-        if (left.width === 0.0) {
-          paint.style = ui.PaintingStyle.stroke;
-        } else {
-          paint.style = ui.PaintingStyle.fill;
-          path.lineTo(rect.left + left.width, rect.top + top.width);
-          path.lineTo(rect.left + left.width, rect.bottom - bottom.width);
-        }
-        canvas.drawPath(path, paint);
-        break;
-      }
-      case C[0] || CT.C0:
-      {
-        break;
-      }
+    if (needSave) canvas.restore();
+    if (invertedCanvas) {
+      canvas.restore();
     }
   };
-  dart.trackLibraries("packages/flutter/src/painting/borders.dart", {
-    "package:flutter/src/painting/borders.dart": borders$
+  decoration_image._generateImageTileRects = function _generateImageTileRects(outputRect, fundamentalRect, repeat) {
+    return new (T.SyncIterableOfRect()).new(function* _generateImageTileRects() {
+      let startX = 0;
+      let startY = 0;
+      let stopX = 0;
+      let stopY = 0;
+      let strideX = fundamentalRect.width;
+      let strideY = fundamentalRect.height;
+      if (repeat === decoration_image.ImageRepeat.repeat || repeat === decoration_image.ImageRepeat.repeatX) {
+        startX = ((outputRect.left - fundamentalRect.left) / strideX)[$floor]();
+        stopX = ((outputRect.right - fundamentalRect.right) / strideX)[$ceil]();
+      }
+      if (repeat === decoration_image.ImageRepeat.repeat || repeat === decoration_image.ImageRepeat.repeatY) {
+        startY = ((outputRect.top - fundamentalRect.top) / strideY)[$floor]();
+        stopY = ((outputRect.bottom - fundamentalRect.bottom) / strideY)[$ceil]();
+      }
+      for (let i = startX; i <= stopX; i = i + 1) {
+        for (let j = startY; j <= stopY; j = j + 1)
+          yield fundamentalRect.shift(new ui.Offset.new(i * strideX, j * strideY));
+      }
+    });
+  };
+  decoration_image._scaleRect = function _scaleRect(rect, scale) {
+    return new ui.Rect.fromLTRB(rect.left * scale, rect.top * scale, rect.right * scale, rect.bottom * scale);
+  };
+  dart.defineLazy(decoration_image, {
+    /*decoration_image._pendingImageSizeInfo*/get _pendingImageSizeInfo() {
+      return new (T.IdentityMapOfString$ImageSizeInfo()).new();
+    },
+    set _pendingImageSizeInfo(_) {},
+    /*decoration_image._lastFrameImageSizeInfo*/get _lastFrameImageSizeInfo() {
+      return T.LinkedHashSetOfImageSizeInfo().new();
+    },
+    set _lastFrameImageSizeInfo(_) {}
+  }, false);
+  dart.trackLibraries("packages/flutter/src/painting/decoration_image.dart", {
+    "package:flutter/src/painting/decoration_image.dart": decoration_image
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["borders.dart"],"names":[],"mappings":"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","file":"../../../../../../../packages/flutter/src/painting/borders.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["decoration_image.dart"],"names":[],"mappings":"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","file":"../../../../../../../packages/flutter/src/painting/decoration_image.dart.lib.js"}');
   // Exports:
   return {
-    src__painting__borders: borders$
+    src__painting__decoration_image: decoration_image
   };
 }));
 
-//# sourceMappingURL=borders.dart.lib.js.map
+//# sourceMappingURL=decoration_image.dart.lib.js.map

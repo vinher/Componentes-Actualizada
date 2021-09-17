@@ -10,11 +10,11 @@ class AnimatedContainerPage extends StatefulWidget {
 }
 
 class _AnimatedContainerPageState extends State<AnimatedContainerPage> {
-  double _width = 50.0;
-  double _height = 50.0;
-  Color _color = Colors.pink;
-
-  BorderRadiusGeometry _borderRadius = BorderRadius.circular(8.0);
+double _width = 50.0;
+double _height = 50.0;
+Color _color = Colors.pink;
+BorderRadiusGeometry _borderRadius = BorderRadius.circular(8.0);
+ 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,9 +39,6 @@ class _AnimatedContainerPageState extends State<AnimatedContainerPage> {
           onPressed: _cambiarForma,
           
           ),
-
-
-
     );
   }
   void _cambiarForma(){

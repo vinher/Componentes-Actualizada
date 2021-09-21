@@ -67,10 +67,11 @@ class _SliderPageState extends State<SliderPage> {
 
     return CheckboxListTile(
       title: Text('Bloquear slider'),
+      secondary:Icon(Icons.beach_access),
       value: _bloquearCheck,
-      onChanged: (valor){ 
+      onChanged: (bool? valor){ 
         setState(() {
-          _bloquearCheck = valor;
+          _bloquearCheck = valor!;
         });
       },
 
